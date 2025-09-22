@@ -1,0 +1,12 @@
+@prefix beo: <https://beo/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a sh:NodeShape ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path beo:biomarkerName ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path beo:biomarkerId ] ;
+    sh:targetClass beo:Biomarker .
