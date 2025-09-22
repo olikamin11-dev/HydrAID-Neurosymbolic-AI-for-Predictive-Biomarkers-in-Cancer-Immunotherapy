@@ -1,0 +1,14 @@
+PREFIX beo: <https://beo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?biomarker ?biomarkerLabel
+WHERE {
+  ?evidence a beo:Evidence ;
+            beo:evidenceImmunotherapy <https://beo/Inmmunotherapy/1> ;
+            beo:evidenceDisease <https://beo/Disease/DOID%3A3908> ;
+            beo:evidenceResponse <https://beo/Response/Positive> ;
+            beo:evidenceBiomarker ?biomarker .
+
+  ?biomarker rdfs:label ?biomarkerLabel .
+}
+ORDER BY ?biomarkerLabel
