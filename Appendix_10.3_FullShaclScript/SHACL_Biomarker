@@ -1,0 +1,44 @@
+try:
+    import openpyxl
+except ImportError:
+    import subprocess
+    import sys
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "openpyxl"])
+
+
+
+from pyshacl import validate
+from rdflib import Graph
+import pandas as pd
+
+# Rutas a tus archivos
+grafo_path = r"C:/Oliver/tesis/mappings/New_model/SHACL/grafo_hydraid.ttl"
+shapes_path = r"C:/Oliver/tesis/mappings/New_model/SHACL/shape_biomarker_minmax.ttl"
+
+# Cargar grafos
+data_graph = Graph().parse(grafo_path, format="ttl")
+shapes_graph = Graph().parse(shapes_path, format="ttl")
+
+# Ejecutar validación
+results = validate(data_graph, shacl_graph=shapes_graph, inference='rdfs', debug=True)
+report_text = str(results[2])
+
+# Extraer violaciones
+violations = []
+lines = report_text.splitlines()
+for i, line in enumerate(lines):
+    if "Focus Node:" in line:
+        focus_node = line.split("Focus Node:")[1].strip()
+        result_path = lines[i + 1].split("Result Path:")[1].strip() if "Result Path:" in lines[i + 1] else ""
+        message = lines[i + 2].split("Message:")[1].strip() if "Message:" in lines[i + 2] else ""
+        violations.append({
+            "Focus Node": focus_node,
+            "Result Path": result_path,
+            "Message": message
+        })
+
+# Guardar como Excel
+df = pd.DataFrame(violations)
+df.to_excel(r"C:/Oliver/tesis/shacl_violations_biomarker.xlsx", index=False)
+print("Reporte guardado como Excel.")
+
