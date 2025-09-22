@@ -1,0 +1,1720 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://beo/ontology/0.2/graph> {
+  <https://beo/Publication> a owl:Class;
+    rdfs:subClassOf <https://schema.org/CreativeWork>;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T00:41:09.399Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-07-04T00:54:24.277Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "Publication"@en;
+    rdfs:comment "A class of publication in which original scientific work is described."@en .
+  
+  <https://beo/Disease> a owl:Class;
+    rdfs:subClassOf <https://schema.org/MedicalCondition>;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T01:31:00.007Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-07-04T00:55:03.284Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "Disease"@en;
+    rdfs:comment """Any abnormal condition of the body or mind that causes discomfort, dysfunction, or distress to the person affected or those in contact with the person. The term is often used broadly to include injuries, disabilities, syndromes, symptoms, deviant behaviors, and atypical variations of structure and function.
+"""@en .
+  
+  <https://beo/isAssociatedWith> a owl:ObjectProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T01:26:51.641Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-07-24T23:39:25.269Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "is associated with"@en;
+    rdfs:comment "Indicates a general contextual relationship between two entities (e.g., a biomarker and a disease or therapy), without specifying the nature or direction of the association."@en .
+  
+  <https://beo/hasReference> a owl:ObjectProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T01:18:30.814Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-07-24T23:39:25.269Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "has reference"@en;
+    rdfs:comment "Links an entity, typically an evidence instance or biomarker, to the scientific publication that supports or reports the information."@en .
+  
+  <https://beo/Evidence> a owl:Class;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T01:18:30.814Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-08-06T23:13:29.633Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "Evidence"@en;
+    rdfs:comment """Inference Logic V5.3 – Decision Tree to Determine Biomarker ↔ Therapy Association
+
+
+1. Inclusion criteria
+If all patients in the study are EGFR wild-type or ALK wild-type → no association (by design)
+
+Example:
+Text: “All patients included were EGFR wild-type” → no association
+
+2. Evaluation of clinical endpoints
+Positive association:
+
+Hazard Ratio (HR) < 1 with p < 0.05
+
+Higher ORR or DCR in biomarker-positive group
+
+Keywords: longer, improved, better, favorable, higher
+
+Example:
+“High PD-L1 expression: OS HR=0.43, p<0.01” → positive
+
+Negative association:
+
+HR > 1 with p < 0.05
+
+Lower ORR or DCR in biomarker-positive group
+
+Keywords: shorter, worse, reduced, poor prognosis, resistance
+
+Example:
+“NLR ≥4.2 HR=2.56, p<0.001” → negative
+
+No association:
+
+p ≥ 0.05
+
+Keywords or phrases like: no difference, similar outcomes, not statistically significant
+
+Example:
+“PD-L1 expression did not correlate with OS (p=0.82)” → no association
+
+3. Conflicting endpoints
+Improved OS but not PFS → positive (OS-only)
+
+Improved PFS but not OS → positive (PFS-only)
+
+If inconsistent or contradictory → no association
+
+Example:
+“PD-L1 low: OS HR=0.43, p<0.01; PFS not significant” → positive (OS-only)
+
+4. Biomarker levels
+Whitelist (high expression = positive):
+
+TMB, TMI, PD-L1, CD8+, CD4+, IFN-γ, CD11b+, CD103+
+
+Example:
+“High TMB was associated with improved PFS and OS” → positive
+
+Blacklist (high expression = negative):
+
+NLR, dNLR, CRP, LDH, ECOG≥2, Liver metastases, Ki-67
+
+Example:
+“Elevated LDH was associated with worse OS” → negative
+
+5. Trends
+HR < 1 but p ≥ 0.05 → trend_positive
+
+HR > 1 but p ≥ 0.05 → trend_negative
+
+Example:
+“PD-L1 HR=0.85, p=0.12” → trend_positive
+
+6. Extrinsic biomarkers
+Microbiota (e.g. Akkermansia): → positive if high abundance = better ORR/OS
+
+Circulating immune cells (e.g. CD11b+): → positive if higher in responders
+
+Example:
+“Akkermansia+ patients had ORR 41% vs 19%” → positive
+
+7. Safety evidence
+If the clinical significance refers only to adverse events (AE) → not_applicable_efficacy
+
+Example:
+“PD-L1+ patients had fewer grade ≥3 adverse events” → not_applicable_efficacy
+
+8. Default rule
+If none of the above conditions apply → no association
+
+"""@en .
+  
+  <https://beo/Target> a owl:Class;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T01:26:51.641Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-07-04T00:53:56.021Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "Target"@en;
+    rdfs:comment "An object fixed as a goal or point of examination; something to point at; a destination."@en .
+  
+  <https://beo/Inmmunotherapy> a owl:Class;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T01:26:51.641Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-07-24T19:34:09.049Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "Inmmunotherapy"@en;
+    rdfs:comment "Therapy designed to induce changes in a patient's immune status in order to treat disease."@en .
+  
+  <https://beo/Biomarker> a owl:Class;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T01:31:00.007Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-07-17T12:52:45.580Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "Biomarker"@en;
+    rdfs:comment "A characteristic that can be objectively measured and serves as an indicator for normal biologic processes, pathogenic processes, state of health or disease, the risk for disease development and/or prognosis, or responsiveness to a particular therapeutic intervention."@en .
+  
+  <https://beo/BiomarkerShape> a sh:NodeShape;
+    sh:property [
+        sh:class <https://beo/Disease>;
+        sh:path <https://beo/isAssociatedWith>
+      ], [
+        sh:path <https://beo/biomarkerId>;
+        sh:datatype xsd:string;
+        sh:minCount 0
+      ], [
+        sh:path <https://beo/biomarkerUid>;
+        sh:datatype xsd:string
+      ], [
+        sh:path <https://beo/biomarkerCathegory>;
+        sh:datatype xsd:string
+      ], [
+        sh:path <https://beo/biomarkerName>;
+        sh:datatype xsd:string;
+        sh:minCount 0
+      ], [
+        sh:class <https://beo/Publication>;
+        sh:path <https://beo/hasReference>
+      ], [
+        sh:class <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17248>;
+        sh:path <https://beo/isDerivedFrom>
+      ], [
+        sh:path <https://beo/biomarkerAssociation>;
+        sh:datatype xsd:string
+      ], [
+        sh:path <https://beo/biomarkerType>;
+        sh:datatype xsd:string
+      ], [
+        sh:class <https://beo/Inmmunotherapy>;
+        sh:path <https://beo/isAssociatedWith>
+      ], [
+        sh:path <https://beo/biomarkerAnnotation>;
+        sh:datatype xsd:string
+      ];
+    sh:targetClass <https://beo/Biomarker> .
+  
+  <https://beo/EvidenceShape> a sh:NodeShape;
+    sh:property [
+        sh:path <https://beo/evidenceStudyDesign>;
+        sh:datatype xsd:string
+      ], [
+        sh:path <https://beo/evidenceStudyExperimentalPopulation>;
+        sh:datatype xsd:string
+      ], [
+        sh:path <https://beo/evidenceClinicalSignificanceName>;
+        sh:datatype xsd:string
+      ], [
+        sh:path <https://beo/evidenceSource>;
+        sh:datatype xsd:string
+      ], [
+        sh:path <https://beo/evidenceLabel>;
+        sh:datatype xsd:string
+      ], [
+        sh:class <https://beo/Publication>;
+        sh:path <https://beo/hasReference>;
+        sh:minCount 1
+      ], [
+        sh:class <https://beo/Disease>;
+        sh:path <https://beo/isAssociatedWith>;
+        sh:minCount 1
+      ], [
+        sh:path <https://beo/evidenceId>;
+        sh:datatype xsd:string
+      ], [
+        sh:path <https://beo/evidenceControlSampleSize>;
+        sh:datatype xsd:string
+      ], [
+        sh:path <https://beo/evidenceAdverseEvent>;
+        sh:datatype xsd:string
+      ];
+    sh:targetClass <https://beo/Evidence> .
+  
+  <https://beo/InmmunotherapyShape> a sh:NodeShape;
+    sh:property [
+        sh:path <https://beo/therapyName>;
+        sh:datatype xsd:string;
+        sh:minCount 0
+      ], [
+        sh:path <https://beo/therapyDetails>;
+        sh:datatype xsd:string
+      ], [
+        sh:path <https://beo/therapyControl>;
+        sh:datatype xsd:string
+      ], [
+        sh:class <https://beo/Evidence>;
+        sh:path <https://beo/isAssociatedWith>;
+        sh:minCount 1
+      ], [
+        sh:path <https://beo/therapyId>;
+        sh:datatype xsd:string;
+        sh:minCount 0
+      ], [
+        sh:class <https://beo/Target>;
+        sh:path <https://schema.org/target>;
+        sh:minCount 1
+      ], [
+        sh:class <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C28241>;
+        sh:path <https://beo/modulates>
+      ], [
+        sh:path <https://beo/therapyDrugClass>;
+        sh:datatype xsd:string
+      ];
+    sh:targetClass <https://beo/Inmmunotherapy> .
+  
+  <https://beo/PublicationShape> a sh:NodeShape;
+    sh:property [
+        sh:path <https://beo/publicationJournal>;
+        sh:datatype xsd:string;
+        sh:minCount 0
+      ], [
+        sh:class <https://beo/Publication>;
+        sh:path <https://schema.org/citation>
+      ], [
+        sh:path <https://beo/publicationTitle>;
+        sh:datatype xsd:string;
+        sh:minCount 0
+      ], [
+        sh:path <https://beo/publicationId>;
+        sh:datatype xsd:string;
+        sh:minCount 0
+      ], [
+        sh:path <http://purl.org/spar/fabio/hasPublicationYear>;
+        sh:datatype xsd:string;
+        sh:minCount 0
+      ];
+    sh:targetClass <https://beo/Publication> .
+  
+  <https://beo/TargetShape> a sh:NodeShape;
+    sh:property [
+        sh:path <https://beo/targetId>;
+        sh:datatype xsd:string;
+        sh:minCount 0
+      ], [
+        sh:class <https://beo/Disease>;
+        sh:path <https://beo/isAssociatedWith>;
+        sh:minCount 1
+      ], [
+        sh:path <https://beo/targetUniprotId>;
+        sh:datatype xsd:string
+      ], [
+        sh:path <https://beo/targetName>;
+        sh:datatype xsd:string;
+        sh:minCount 0
+      ];
+    sh:targetClass <https://beo/Target> .
+  
+  <https://beo/diseaseId> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T16:39:02.822Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T16:39:02.822Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "disease id"@en .
+  
+  <https://beo/DiseaseShape> a sh:NodeShape;
+    sh:property [
+        sh:path <https://beo/diseaseUid>;
+        sh:datatype xsd:string;
+        sh:minCount 1
+      ], [
+        sh:path <https://beo/diseaseDetails>;
+        sh:datatype xsd:string
+      ], [
+        sh:path <https://beo/diseaseName>;
+        sh:datatype xsd:string;
+        sh:minCount 1
+      ], [
+        sh:path <https://beo/diseaseOrgan>;
+        sh:datatype xsd:string
+      ], [
+        sh:path <https://beo/diseaseId>;
+        sh:datatype xsd:string
+      ];
+    sh:targetClass <https://beo/Disease> .
+  
+  <https://beo/diseaseUid> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T16:40:02.144Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T16:40:02.144Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "disease uid"@en .
+  
+  <https://beo/diseaseName> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T16:40:47.086Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T16:40:47.086Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "disease_name"@en .
+  
+  <https://beo/diseaseDetails> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T16:43:25.839Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T16:43:25.839Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "disease details"@en .
+  
+  <https://beo/diseaseOrgan> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T16:45:24.771Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T16:45:24.771Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "disease organ"@en .
+  
+  <https://beo/targetId> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T16:49:29.406Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T16:49:29.406Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "target id"@en .
+  
+  <https://beo/targetUniprotId> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T17:04:43.951Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T17:04:43.951Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "target uniprot id"@en .
+  
+  <https://beo/targetName> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T17:04:43.951Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T17:04:43.951Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "target name"@en .
+  
+  <https://beo/hasTarget> a owl:ObjectProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T17:10:22.609Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T17:10:22.609Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "has target"@en .
+  
+  <https://beo/therapyId> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T17:10:22.609Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T17:10:22.609Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "therapy id"@en .
+  
+  <https://beo/therapyDetails> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T17:11:21.311Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T17:11:21.311Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "therapy details"@en .
+  
+  <https://beo/therapyControl> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T17:20:31.749Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T17:20:31.749Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "therapy control"@en .
+  
+  <https://beo/biomarkerId> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T17:24:27.510Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T17:24:27.510Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "biomarker id"@en .
+  
+  <https://beo/biomarkerUid> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T17:26:00.325Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T17:26:00.325Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "biomarker uid"@en .
+  
+  <https://beo/biomarkerAnnotation> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T17:26:35.646Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T17:26:35.646Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "biomarker annotation"@en .
+  
+  <https://beo/biomarkerType> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T17:27:33.088Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T17:27:33.088Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "biomarker type"@en .
+  
+  <https://beo/biomarkerAssociation> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T17:28:16.597Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T17:28:16.597Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "biomarker association"@en .
+  
+  <https://beo/publicationId> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T17:29:22.581Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-06-15T23:15:51.626Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "Publication_PMID"@en .
+  
+  <https://beo/publicationTitle> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T17:30:00.281Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T17:30:00.281Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "Publication title"@en .
+  
+  <https://beo/publicationJournal> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T17:31:07.377Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T17:31:07.377Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "publication journal"@en .
+  
+  <https://beo/publicationPmidName> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T17:41:21.299Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T17:41:21.299Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "publication pmid name"@en .
+  
+  <https://beo/evidenceSource> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T17:41:21.299Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-06-24T01:18:33.027Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "evidence source ID"@en .
+  
+  <https://beo/evidenceType> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T17:44:23.926Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T17:44:23.926Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "evidence type"@en .
+  
+  <https://beo/evidenceImmunotherapy> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T17:44:23.926Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-26T02:22:46.062Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "evidence immunotherapy sample size"@en .
+  
+  <https://beo/evidenceStudyDesign> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T17:45:48.110Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T17:45:48.110Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "evidence study design"@en .
+  
+  <https://beo/evidenceControlSampleSize> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T17:45:48.110Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T17:45:48.110Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "evidence control sample size"@en .
+  
+  <https://beo/evidenceClinicalSignificanceName> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T17:46:32.419Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T17:46:32.419Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "evidence clinical significance name "@en .
+  
+  <https://beo/evidenceAdverseEvent> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T17:48:42.656Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T17:48:42.656Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "evidence adverse event"@en .
+  
+  <https://beo/evidenceId> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T17:48:42.656Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-02-25T17:48:42.656Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "evidence id"@en .
+  
+  <https://beo/biomarkerName> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-26T02:10:21.442Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-26T02:10:21.442Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "biomarker name"@en .
+  
+  <https://beo/hasResponse> a owl:ObjectProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T14:42:17.652Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T15:27:12.482Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "has response"@en .
+  
+  <https://beo/hasGeneticVariant> a owl:ObjectProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T14:42:17.652Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T15:43:07.370Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "has genetic variant"@en .
+  
+  <https://schema.org/PatientShape> a sh:NodeShape;
+    sh:property [
+        sh:class <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C28241>;
+        sh:path <https://beo/hasImmuneProfile>
+      ], [
+        sh:class <https://beo/Inmmunotherapy>;
+        sh:path <https://beo/hasTreatment>;
+        sh:minCount 1
+      ], [
+        sh:class <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17248>;
+        sh:path <https://beo/hasGeneticVariant>
+      ], [
+        sh:path <https://beo/patientId>;
+        sh:datatype xsd:string
+      ], [
+        sh:path <https://beo/patientSex>;
+        sh:datatype xsd:string
+      ], [
+        sh:path <https://beo/patientRace>;
+        sh:datatype xsd:string
+      ], [
+        sh:path <https://beo/patientAge>;
+        sh:datatype xsd:string
+      ], [
+        sh:class <http://purl.bioontology.org/ontology/MEDDRA/10043409>;
+        sh:path <https://beo/hasResponse>
+      ], [
+        sh:path <https://beo/patientMedicalHistory>;
+        sh:datatype xsd:string
+      ];
+    sh:targetClass <https://schema.org/Patient> .
+  
+  <https://beo/hasImmuneProfile> a owl:ObjectProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T15:25:31.122Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T15:31:49.942Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "has immune profile"@en .
+  
+  <https://beo/isDerivedFrom> a owl:ObjectProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T15:27:12.482Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T15:27:12.482Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "is derived from"@en .
+  
+  <https://beo/modulates> a owl:ObjectProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T15:31:49.942Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T15:31:49.942Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "modulates"@en .
+  
+  <https://beo/hasTreatment> a owl:ObjectProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T15:31:49.942Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T15:31:49.942Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "has treatment"@en .
+  
+  <http://purl.bioontology.org/ontology/MEDDRA/10043409> a owl:Class;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T14:42:17.652Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T18:17:56.247Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "ResponseToTherapy"@en .
+  
+  <https://beo/patientSex> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T15:43:07.370Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T15:43:07.370Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "patientSex"@en .
+  
+  <https://beo/patientAge> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T15:43:07.370Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T15:43:07.370Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "patientAge"@en .
+  
+  <https://beo/patientMedicalHistory> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T15:43:07.370Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T15:43:07.370Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "patientMedicalHistory"@en .
+  
+  <https://beo/patientRace> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T15:43:07.370Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T15:43:07.370Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "patientRace"@en .
+  
+  <https://beo/patientId> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T15:43:07.370Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T15:43:07.370Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "patientID"@en .
+  
+  <https://beo/adverseEvents> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T18:17:56.247Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T18:17:56.247Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "adverse events"@en .
+  
+  <https://beo/cellAbundance> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T18:17:56.247Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T18:17:56.247Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "cell abundance"@en .
+  
+  <https://beo/variantId> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T18:17:56.247Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T18:17:56.247Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "variant ID"@en .
+  
+  <https://beo/markerGenes> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T18:17:56.247Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T18:17:56.247Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "marker genes"@en .
+  
+  <https://beo/responseDuration> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T18:17:56.247Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T18:17:56.247Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "response duration"@en .
+  
+  <https://beo/geneName> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T18:17:56.247Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T18:17:56.247Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "gene name"@en .
+  
+  <https://beo/mutationType> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T18:17:56.247Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T18:17:56.247Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "mutation type"@en .
+  
+  <https://beo/responseType> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T18:17:56.247Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T18:17:56.247Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "response type"@en .
+  
+  <https://beo/alleleFrequency> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T18:17:56.247Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T18:17:56.247Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "allele frequency"@en .
+  
+  <https://beo/cellType> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T18:17:56.247Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T18:17:56.247Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "cell type"@en .
+  
+  <https://beo/patientResponseStatus> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T18:17:56.247Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T18:17:56.247Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "patient response status"@en .
+  
+  <http://purl.bioontology.org/ontology/MEDDRA/10043409Shape> a sh:NodeShape;
+    sh:property [
+        sh:path <https://beo/responseDuration>;
+        sh:datatype xsd:string
+      ], [
+        sh:path <https://beo/responseType>;
+        sh:datatype xsd:string
+      ], [
+        sh:path <https://beo/patientResponseStatus>;
+        sh:datatype xsd:string
+      ], [
+        sh:path <https://beo/adverseEvents>;
+        sh:datatype xsd:string
+      ];
+    sh:targetClass <http://purl.bioontology.org/ontology/MEDDRA/10043409> .
+  
+  <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17248> a owl:Class;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T14:42:17.652Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T18:27:22.947Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "GeneticVariant"@en .
+  
+  <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C28241> a owl:Class;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-19T15:25:31.122Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-19T18:27:22.947Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "ImmuneCell"@en .
+  
+  <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17248Shape> a sh:NodeShape;
+    sh:property [
+        sh:path <https://beo/mutationType>;
+        sh:datatype xsd:string
+      ], [
+        sh:path <https://beo/alleleFrequency>;
+        sh:datatype xsd:string
+      ], [
+        sh:path <https://beo/geneName>;
+        sh:datatype xsd:string
+      ], [
+        sh:path <https://beo/variantId>;
+        sh:datatype xsd:string
+      ];
+    sh:targetClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17248> .
+  
+  <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C28241Shape> a sh:NodeShape;
+    sh:property [
+        sh:path <https://beo/cellAbundance>;
+        sh:datatype xsd:string
+      ], [
+        sh:path <https://beo/cellType>;
+        sh:datatype xsd:string
+      ], [
+        sh:path <https://beo/markerGenes>;
+        sh:datatype xsd:string
+      ];
+    sh:targetClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C28241> .
+  
+  <https://beo/therapyName> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-03-26T02:13:39.512Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-03-26T02:13:39.512Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "therapy name"@en .
+  
+  <http://localhost:10214/container/ontodiaDiagramContainer/default_diagram> a <http://www.w3.org/ns/prov#Entity>,
+      <http://www.w3.org/ns/ldp#Resource>, <http://ontodia.org/schema/v1#Diagram>;
+    rdfs:label "Default Diagram";
+    <http://www.w3.org/ns/prov#wasAttributedTo> <http://www.metaphacts.com/resource/user/admin>;
+    <http://www.w3.org/ns/prov#generatedAtTime> "2025-03-19T18:17:53.592Z"^^xsd:dateTime,
+      "2025-04-11T02:59:15.395Z"^^xsd:dateTime, "2025-06-24T02:53:25.771Z"^^xsd:dateTime;
+    <http://ontodia.org/schema/v1#layoutData> [ a <http://ontodia.org/schema/v1#Layout>;
+        <http://ontodia.org/schema/v1#hasElement> <http://ontodia.org/data/e_0918ad5a61d4ac3c643757e889f35d93>,
+          <http://ontodia.org/data/e_7804e27c0556c7a05837524a07f932b5>, <http://ontodia.org/data/e_bf8c6fc07ee0bd8df878407252af9ba8>,
+          <http://ontodia.org/data/e_3e0283297cfba02098cb2fb409ce11db>, <http://ontodia.org/data/e_adb00e8536e20db6eb2d42e0ad3d36e1>,
+          <http://ontodia.org/data/e_01a4abd8cf92968faf5be4c240136441>;
+        <http://ontodia.org/schema/v1#hasLink> <http://ontodia.org/data/l_246c794553947f7c29c11abc762ea218>,
+          <http://ontodia.org/data/l_cb5a8d29d2a52edf5caa008afe7048e0>, <http://ontodia.org/data/l_e7fa654a768c2d9af1082ef6b840be3b>,
+          <http://ontodia.org/data/l_fe799e8f7c15fdeb537a81a27627feb2>, <http://ontodia.org/data/l_4c20e447c35456dbb05d747eaf8dd1b9>,
+          <http://ontodia.org/data/l_7599dad4218139f701e908ab0a234454>, <http://ontodia.org/data/l_587755481c149b4dc4fd1d013ef58dcc>,
+          <http://ontodia.org/data/l_a773f8b000d6f805184ef97fd2803794>
+      ], [ a <http://ontodia.org/schema/v1#Layout>;
+        <http://ontodia.org/schema/v1#hasElement> <http://ontodia.org/data/e_5ac106f00b2c579a707b9a4329b2f8a5>,
+          <http://ontodia.org/data/e_e8e9f012e19d411abe402b6e9cd23186>, <http://ontodia.org/data/e_81ed50e4c9f1712f31ddb4f32a5ccfa4>,
+          <http://ontodia.org/data/e_5ad0382e3e5af5d270ee8e284f844a02>, <http://ontodia.org/data/e_5970f801871cedefc0103a3c8df87f95>,
+          <http://ontodia.org/data/e_b5e74f5c299b2b6c65b113f384128590>, <http://ontodia.org/data/e_3d459584ed4bb163b9f8fcd3393762db>,
+          <http://ontodia.org/data/e_3ae5d2a376e561222418d8d0ad26a9ff>, <http://ontodia.org/data/e_66c0e42ffaccc8322a9f4b6d2c5a7ff8>,
+          <http://ontodia.org/data/e_7b0f2267e69b006581817838da61ff7a>;
+        <http://ontodia.org/schema/v1#hasLink> <http://ontodia.org/data/l_4dab96e51aefcc316182c86d3d1b348c>,
+          <http://ontodia.org/data/l_2d6628e374bdf0c9044ba2bb36b32e8c>, <http://ontodia.org/data/l_c25c73e163ef16b17dde73f73a74b448>,
+          <http://ontodia.org/data/l_3b6e16f96c8bc0dbeb7227796fea81d0>, <http://ontodia.org/data/l_b5c0b462143e599ce607a68f1c7ea5dc>,
+          <http://ontodia.org/data/l_b8d4c88561b9fb8aa4173afa8463c683>, <http://ontodia.org/data/l_127f0c6489365e3eec64dceeb39b67ad>,
+          <http://ontodia.org/data/l_1f404881a8bbea08da359cdb557fa24f>, <http://ontodia.org/data/l_55da4b07efc319c5e794c6bbaf07bb4e>,
+          <http://ontodia.org/data/l_4dc5142c7c7fedd7b660a10fdd3c0e2e>, <http://ontodia.org/data/l_bae2f267cb33a5b92576a8a9316293be>,
+          <http://ontodia.org/data/l_9b68091e5e77ffe8f425f862851bd65e>, <http://ontodia.org/data/l_76043ae149e87c27b3684719ea079021>,
+          <http://ontodia.org/data/l_0aa62ca76a703d154e0a305d6f8f6097>
+      ], [ a <http://ontodia.org/schema/v1#Layout>;
+        <http://ontodia.org/schema/v1#hasElement> <http://ontodia.org/data/e_4f2f64546a49650e909e096b475ecf7b>,
+          <http://ontodia.org/data/e_04817f6d6241522f48e8905cf2efffb0>, <http://ontodia.org/data/e_01812c382a36920fc724ebd9a210789e>,
+          <http://ontodia.org/data/e_26fd9f39ece11e713198a1f72c0119e2>, <http://ontodia.org/data/e_1955b3c05de33097d103fd2b04af3910>,
+          <http://ontodia.org/data/e_cfee5c34a789e6d9c33d5b56712bee2b>, <http://ontodia.org/data/e_7c8749e07a3660d7f67efbe10f512706>,
+          <http://ontodia.org/data/e_d863b700fa23a399e1bfef876d1c1eed>, <http://ontodia.org/data/e_010322287bcb2a8986ac5df86de23f21>;
+        <http://ontodia.org/schema/v1#hasLink> <http://ontodia.org/data/l_9811c89f53a37319a17ddcd5e523162f>,
+          <http://ontodia.org/data/l_c6de7305795518b5ae3d3a23cf5e4e30>, <http://ontodia.org/data/l_5ce2a07bfc5db0df9a7d74758d695dd6>,
+          <http://ontodia.org/data/l_f93f55dc1a2b42dc80d3aac733163d53>, <http://ontodia.org/data/l_3a694313ca08bb86f2587e042d940c2b>,
+          <http://ontodia.org/data/l_393ec7cdc7f6b9a625bafbb66a2ce110>, <http://ontodia.org/data/l_40af941e02c3fe50a4871dcda941be1e>,
+          <http://ontodia.org/data/l_24498c53cf5c1284203abd960e7515c2>, <http://ontodia.org/data/l_a35675f09a4f4a1639e0a2017edc5bba>,
+          <http://ontodia.org/data/l_24a2fcc7818703b7b0b2922bcabfe7f7>
+      ];
+    <http://ontodia.org/schema/v1#linkTypeOptions> [ a <http://ontodia.org/schema/v1#LinkTypeOptions>;
+        <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation-owl>;
+        <http://ontodia.org/schema/v1#showLabel> true;
+        <http://ontodia.org/schema/v1#visible> false
+      ];
+    <http://www.metaphacts.com/ontologies/platform#diagramForOntology> <https://beo/ontology/0.2>;
+    <http://www.metaphacts.com/ontologies/platform#diagramKind> <http://www.metaphacts.com/ontologies/platform#OntologyDiagram>;
+    <http://www.metaphacts.com/ontologies/platform#isDefaultDiagram> "true" .
+  
+  <http://ontodia.org/data/e_5ac106f00b2c579a707b9a4329b2f8a5> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> true;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> -262;
+        <http://ontodia.org/schema/v1#yCoordValue> 23
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Target> .
+  
+  <http://ontodia.org/data/e_e8e9f012e19d411abe402b6e9cd23186> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> true;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 401;
+        <http://ontodia.org/schema/v1#yCoordValue> 61
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Evidence> .
+  
+  <http://ontodia.org/data/e_81ed50e4c9f1712f31ddb4f32a5ccfa4> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> true;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 1.0012946693762701E3;
+        <http://ontodia.org/schema/v1#yCoordValue> -1.3751336564014377E2
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Publication> .
+  
+  <http://ontodia.org/data/e_5ad0382e3e5af5d270ee8e284f844a02> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> true;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 867;
+        <http://ontodia.org/schema/v1#yCoordValue> 268
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Biomarker> .
+  
+  <http://ontodia.org/data/e_5970f801871cedefc0103a3c8df87f95> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> true;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 4.4779709238705664E2;
+        <http://ontodia.org/schema/v1#yCoordValue> 6.597569954666249E2
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Inmmunotherapy> .
+  
+  <http://ontodia.org/data/e_b5e74f5c299b2b6c65b113f384128590> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> true;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 4.005644051899328E2;
+        <http://ontodia.org/schema/v1#yCoordValue> -3.2592770048460216E2
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Disease> .
+  
+  <http://ontodia.org/data/e_3d459584ed4bb163b9f8fcd3393762db> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> true;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 1340;
+        <http://ontodia.org/schema/v1#yCoordValue> 164
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://schema.org/Patient> .
+  
+  <http://ontodia.org/data/e_3ae5d2a376e561222418d8d0ad26a9ff> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> true;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 1759;
+        <http://ontodia.org/schema/v1#yCoordValue> 651
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/GeneticVariant> .
+  
+  <http://ontodia.org/data/e_66c0e42ffaccc8322a9f4b6d2c5a7ff8> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> true;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 1240;
+        <http://ontodia.org/schema/v1#yCoordValue> 757
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/ImmuneCell> .
+  
+  <http://ontodia.org/data/e_7b0f2267e69b006581817838da61ff7a> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> true;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 1659;
+        <http://ontodia.org/schema/v1#yCoordValue> -148
+      ];
+    <http://ontodia.org/schema/v1#resource> <http://purl.bioontology.org/ontology/MEDDRA/10043409> .
+  
+  <http://ontodia.org/data/l_4dab96e51aefcc316182c86d3d1b348c> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:31a8b91105ad2754bedf59a2a2175>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_81ed50e4c9f1712f31ddb4f32a5ccfa4>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_81ed50e4c9f1712f31ddb4f32a5ccfa4>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_2d6628e374bdf0c9044ba2bb36b32e8c> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:782117187fc657087eeb1cefe7934>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_5ac106f00b2c579a707b9a4329b2f8a5>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_b5e74f5c299b2b6c65b113f384128590>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_c25c73e163ef16b17dde73f73a74b448> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:f2a120c1eef044fdd547002091ef8>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_5970f801871cedefc0103a3c8df87f95>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_5ac106f00b2c579a707b9a4329b2f8a5>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_3b6e16f96c8bc0dbeb7227796fea81d0> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:58f719293eeacedeea7c217455b3d>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_e8e9f012e19d411abe402b6e9cd23186>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_81ed50e4c9f1712f31ddb4f32a5ccfa4>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_b5c0b462143e599ce607a68f1c7ea5dc> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:dc2be1c577aea7c0542dd8a1937c8>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_5970f801871cedefc0103a3c8df87f95>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_e8e9f012e19d411abe402b6e9cd23186>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_b8d4c88561b9fb8aa4173afa8463c683> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:0df627e4792b8ed03c42b9b41b16238>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_e8e9f012e19d411abe402b6e9cd23186>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_b5e74f5c299b2b6c65b113f384128590>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_127f0c6489365e3eec64dceeb39b67ad> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:1c5e3a9f65e338f7902c0f37e0847b>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_5ad0382e3e5af5d270ee8e284f844a02>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_b5e74f5c299b2b6c65b113f384128590>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_1f404881a8bbea08da359cdb557fa24f> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:d44be1b20799e2f627b92b1bfc4b7>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_5ad0382e3e5af5d270ee8e284f844a02>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_5970f801871cedefc0103a3c8df87f95>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_55da4b07efc319c5e794c6bbaf07bb4e> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:0a96d391827f4bd1ad52e1ec210bd>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_3d459584ed4bb163b9f8fcd3393762db>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_5970f801871cedefc0103a3c8df87f95>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_4dc5142c7c7fedd7b660a10fdd3c0e2e> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:c72782e8dc0f9e76554225bbdf872>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_3d459584ed4bb163b9f8fcd3393762db>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_7b0f2267e69b006581817838da61ff7a>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_bae2f267cb33a5b92576a8a9316293be> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:0beb908311ad2a43ce773d706c69707>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_3d459584ed4bb163b9f8fcd3393762db>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_3ae5d2a376e561222418d8d0ad26a9ff>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_9b68091e5e77ffe8f425f862851bd65e> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:eb0435e5c5a4be78a6785afc5463a>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_5ad0382e3e5af5d270ee8e284f844a02>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_3ae5d2a376e561222418d8d0ad26a9ff>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_76043ae149e87c27b3684719ea079021> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:a077d04d119da44c7032102294cb0>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_5970f801871cedefc0103a3c8df87f95>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_66c0e42ffaccc8322a9f4b6d2c5a7ff8>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_0aa62ca76a703d154e0a305d6f8f6097> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:59853c62740ab4243e89d165c60f6aa>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_3d459584ed4bb163b9f8fcd3393762db>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_66c0e42ffaccc8322a9f4b6d2c5a7ff8>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <https://beo/biomarkerCathegory> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-06-24T01:18:33.027Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-06-24T01:18:33.027Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "biomarker cathegory"@en .
+  
+  <https://beo/therapyDrugClass> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-06-24T01:04:46.572Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-06-24T01:04:46.572Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "therapy drug class"@en .
+  
+  <https://beo/evidenceStudyExperimentalPopulation> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-06-24T01:18:33.027Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-06-24T01:18:33.027Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "Evidence study experimental population"@en .
+  
+  <https://beo/evidenceLabel> a owl:DatatypeProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-06-24T02:07:42.166Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-06-24T02:07:42.166Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "Evidence label"@en .
+  
+  <http://ontodia.org/data/e_4f2f64546a49650e909e096b475ecf7b> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> false;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 688;
+        <http://ontodia.org/schema/v1#yCoordValue> 271
+      ];
+    <http://ontodia.org/schema/v1#resource> <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C28241> .
+  
+  <http://ontodia.org/data/e_04817f6d6241522f48e8905cf2efffb0> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> false;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 971;
+        <http://ontodia.org/schema/v1#yCoordValue> 123
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Biomarker> .
+  
+  <http://ontodia.org/data/e_01812c382a36920fc724ebd9a210789e> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> false;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 263;
+        <http://ontodia.org/schema/v1#yCoordValue> 327
+      ];
+    <http://ontodia.org/schema/v1#resource> <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17248> .
+  
+  <http://ontodia.org/data/e_26fd9f39ece11e713198a1f72c0119e2> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> false;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> -8.485714285714289E1;
+        <http://ontodia.org/schema/v1#yCoordValue> 3.407142857142858E2
+      ];
+    <http://ontodia.org/schema/v1#resource> <http://purl.bioontology.org/ontology/MEDDRA/10043409> .
+  
+  <http://ontodia.org/data/e_1955b3c05de33097d103fd2b04af3910> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> false;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> -137;
+        <http://ontodia.org/schema/v1#yCoordValue> 197
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Target> .
+  
+  <http://ontodia.org/data/e_cfee5c34a789e6d9c33d5b56712bee2b> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> false;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 363;
+        <http://ontodia.org/schema/v1#yCoordValue> 67
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Inmmunotherapy> .
+  
+  <http://ontodia.org/data/e_7c8749e07a3660d7f67efbe10f512706> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> false;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 940;
+        <http://ontodia.org/schema/v1#yCoordValue> -104
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Evidence> .
+  
+  <http://ontodia.org/data/e_d863b700fa23a399e1bfef876d1c1eed> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> false;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 3.492857142857142E2;
+        <http://ontodia.org/schema/v1#yCoordValue> -2.0971428571428578E2
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Disease> .
+  
+  <http://ontodia.org/data/e_010322287bcb2a8986ac5df86de23f21> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> false;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> -1.5257142857142844E2;
+        <http://ontodia.org/schema/v1#yCoordValue> -38
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Publication> .
+  
+  <http://ontodia.org/data/l_9811c89f53a37319a17ddcd5e523162f> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:f2a120c1eef044fdd547002091ef8>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_cfee5c34a789e6d9c33d5b56712bee2b>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_1955b3c05de33097d103fd2b04af3910>;
+    <http://ontodia.org/schema/v1#vertex> ([
+          <http://ontodia.org/schema/v1#xCoordValue> 1.4466650390625E2;
+          <http://ontodia.org/schema/v1#yCoordValue> 1.1616923522949219E2
+        ]) .
+  
+  <http://ontodia.org/data/l_c6de7305795518b5ae3d3a23cf5e4e30> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:31a8b91105ad2754bedf59a2a2175>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_010322287bcb2a8986ac5df86de23f21>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_010322287bcb2a8986ac5df86de23f21>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_5ce2a07bfc5db0df9a7d74758d695dd6> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:58f719293eeacedeea7c217455b3d>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_7c8749e07a3660d7f67efbe10f512706>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_010322287bcb2a8986ac5df86de23f21>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_f93f55dc1a2b42dc80d3aac733163d53> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:782117187fc657087eeb1cefe7934>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_1955b3c05de33097d103fd2b04af3910>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_d863b700fa23a399e1bfef876d1c1eed>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_3a694313ca08bb86f2587e042d940c2b> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:6cfd2b762b54a3f7f0f0fb17a7773>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_04817f6d6241522f48e8905cf2efffb0>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_01812c382a36920fc724ebd9a210789e>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_393ec7cdc7f6b9a625bafbb66a2ce110> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:aee1723dabe1c307dce90f40f9240f>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_cfee5c34a789e6d9c33d5b56712bee2b>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_4f2f64546a49650e909e096b475ecf7b>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_40af941e02c3fe50a4871dcda941be1e> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:1c5e3a9f65e338f7902c0f37e0847b>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_04817f6d6241522f48e8905cf2efffb0>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_d863b700fa23a399e1bfef876d1c1eed>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_24498c53cf5c1284203abd960e7515c2> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:d44be1b20799e2f627b92b1bfc4b7>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_04817f6d6241522f48e8905cf2efffb0>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_cfee5c34a789e6d9c33d5b56712bee2b>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_a35675f09a4f4a1639e0a2017edc5bba> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:dc2be1c577aea7c0542dd8a1937c8>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_cfee5c34a789e6d9c33d5b56712bee2b>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_7c8749e07a3660d7f67efbe10f512706>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_24a2fcc7818703b7b0b2922bcabfe7f7> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:726a4f286c2c7a0a1a08f0c5569e8>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_7c8749e07a3660d7f67efbe10f512706>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_d863b700fa23a399e1bfef876d1c1eed>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/e_0918ad5a61d4ac3c643757e889f35d93> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> false;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> -3.238888888888889E2;
+        <http://ontodia.org/schema/v1#yCoordValue> -1.2355555555555554E2
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Publication> .
+  
+  <http://ontodia.org/data/e_7804e27c0556c7a05837524a07f932b5> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> false;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 524;
+        <http://ontodia.org/schema/v1#yCoordValue> -52
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Target> .
+  
+  <http://ontodia.org/data/e_bf8c6fc07ee0bd8df878407252af9ba8> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> false;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> -155;
+        <http://ontodia.org/schema/v1#yCoordValue> 160
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Disease> .
+  
+  <http://ontodia.org/data/e_3e0283297cfba02098cb2fb409ce11db> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> false;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 921;
+        <http://ontodia.org/schema/v1#yCoordValue> 132
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Biomarker> .
+  
+  <http://ontodia.org/data/e_adb00e8536e20db6eb2d42e0ad3d36e1> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> false;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 849;
+        <http://ontodia.org/schema/v1#yCoordValue> -310
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Inmmunotherapy> .
+  
+  <http://ontodia.org/data/e_01a4abd8cf92968faf5be4c240136441> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> false;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 25;
+        <http://ontodia.org/schema/v1#yCoordValue> -366
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Evidence> .
+  
+  <http://ontodia.org/data/l_246c794553947f7c29c11abc762ea218> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:d44be1b20799e2f627b92b1bfc4b7>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_3e0283297cfba02098cb2fb409ce11db>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_adb00e8536e20db6eb2d42e0ad3d36e1>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_cb5a8d29d2a52edf5caa008afe7048e0> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:31a8b91105ad2754bedf59a2a2175>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_0918ad5a61d4ac3c643757e889f35d93>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_0918ad5a61d4ac3c643757e889f35d93>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_e7fa654a768c2d9af1082ef6b840be3b> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:726a4f286c2c7a0a1a08f0c5569e8>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_01a4abd8cf92968faf5be4c240136441>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_bf8c6fc07ee0bd8df878407252af9ba8>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_fe799e8f7c15fdeb537a81a27627feb2> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:662f11ebd02386ccc8ce671c3cace>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_01a4abd8cf92968faf5be4c240136441>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_0918ad5a61d4ac3c643757e889f35d93>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_4c20e447c35456dbb05d747eaf8dd1b9> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:6afec35e5c947767d7d89fee947816>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_adb00e8536e20db6eb2d42e0ad3d36e1>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_01a4abd8cf92968faf5be4c240136441>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_7599dad4218139f701e908ab0a234454> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:60d1454d87978cbea5ce42efefb1c>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_7804e27c0556c7a05837524a07f932b5>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_bf8c6fc07ee0bd8df878407252af9ba8>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_587755481c149b4dc4fd1d013ef58dcc> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:7cecd266e44276e04d16b06363b3d0e>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_adb00e8536e20db6eb2d42e0ad3d36e1>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_7804e27c0556c7a05837524a07f932b5>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_a773f8b000d6f805184ef97fd2803794> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:1c5e3a9f65e338f7902c0f37e0847b>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_3e0283297cfba02098cb2fb409ce11db>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_bf8c6fc07ee0bd8df878407252af9ba8>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <https://beo/ontology/0.2> a owl:Ontology;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-02-25T00:35:52.715Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-08-06T23:13:29.633Z"^^xsd:dateTime;
+    rdfs:label "Biomarker Evidence Ontology (BEO)"@en;
+    dct:title "Biomarker Evidence Ontology (BEO)"@en;
+    <http://purl.org/ontology/bibo/status> <http://purl.org/spar/pso/draft>;
+    <http://www.linkedmodel.org/1.2/schema/vaem#namespace> <https://beo/>;
+    owl:imports <http://purl.org/spar/fabio>, <https://schema.org/>, <http://purl.obolibrary.org/obo/go/subsets/goslim_generic.owl>,
+      <http://purl.obolibrary.org/obo/go/subsets/goslim_metagenomics.owl>, <http://purl.obolibrary.org/obo/go/subsets/goslim_chembl.owl>,
+      <http://purl.obolibrary.org/obo/go/subsets/goslim_pir.owl>;
+    owl:versionInfo "0.2";
+    owl:priorVersion <https://beo/ontology/0.1> .
+  
+  <https://beo/refersTo> a owl:ObjectProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-07-21T23:34:47.195Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-07-24T23:39:25.269Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "refers to"@en;
+    rdfs:comment "Expresses a semantic link from a response annotation to the specific biomarker or immunotherapy it describes."@en .
+  
+  <https://beo/sourcedFrom> a owl:ObjectProperty;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-07-21T23:34:47.195Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-07-24T23:39:25.269Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "sourced from"@en;
+    rdfs:comment "Specifies the dataset, database, or registry from which the information about a biomedical entity was extracted."@en .
+  
+  <https://beo/Response> a owl:Class;
+    <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:created "2025-07-21T23:34:47.195Z"^^xsd:dateTime;
+    dct:creator "admin";
+    dct:modified "2025-07-24T23:36:41.246Z"^^xsd:dateTime;
+    rdfs:isDefinedBy <https://beo/ontology/0.2>;
+    rdfs:label "Response"@en;
+    rdfs:comment "represents the type of association observed between a biomarker and an immunotherapy in a clinical study, indicating whether the biomarker was positively, negatively, or not significantly associated with the patient’s response to treatment."@en .
+  
+  <https://beo/ResponseShape> a sh:NodeShape;
+    sh:property [
+        sh:class <https://beo/Biomarker>;
+        sh:path <https://beo/refersTo>
+      ], [
+        sh:class <https://beo/Inmmunotherapy>;
+        sh:path <https://beo/refersTo>
+      ], [
+        sh:class <https://beo/Evidence>;
+        sh:path <https://beo/sourcedFrom>
+      ], [
+        sh:path <https://beo/biomarkerAnnotation>;
+        sh:datatype xsd:string
+      ];
+    sh:targetClass <https://beo/Response> .
+  
+  <https://schema.org/Patient> <http://open-services.net/ns/core#modifiedBy> "admin";
+    dct:contributor "admin";
+    dct:modified "2025-04-11T14:18:00.554Z"^^xsd:dateTime .
+  
+  [] <http://www.w3.org/ns/ldp#contains> <http://localhost:10214/container/ontodiaDiagramContainer/default_diagram> .
+}
+
+<http://localhost:10214/container/ontodiaDiagramContainer/default_diagram/context> {
+  <http://localhost:10214/container/ontodiaDiagramContainer/default_diagram> a <http://www.w3.org/ns/ldp#Resource>,
+      <http://www.w3.org/ns/prov#Entity>, <http://ontodia.org/schema/v1#Diagram>;
+    rdfs:label "Default Diagram";
+    <http://www.w3.org/ns/prov#wasAttributedTo> <http://www.metaphacts.com/resource/user/admin>;
+    <http://www.w3.org/ns/prov#generatedAtTime> "2025-08-07T23:26:33.380Z"^^xsd:dateTime;
+    <http://ontodia.org/schema/v1#layoutData> [ a <http://ontodia.org/schema/v1#Layout>;
+        <http://ontodia.org/schema/v1#hasElement> <http://ontodia.org/data/e_7b6ab14fb549543cfc82da65842cbb9b>,
+          <http://ontodia.org/data/e_013f9e06fcce1f1fefa76224f0f79fc7>, <http://ontodia.org/data/e_66c0aaf31bc5551bd4f0c35379d8b96d>,
+          <http://ontodia.org/data/e_dc87aad1a415894570088e1172698f4c>, <http://ontodia.org/data/e_8925a1e30666f2166e0a8dc2da025364>,
+          <http://ontodia.org/data/e_ba3d2cc9f1cb23cc0cb80e8ed04a025a>, <http://ontodia.org/data/e_ecac2b70d173ce64bec51706b339b1b9>;
+        <http://ontodia.org/schema/v1#hasLink> <http://ontodia.org/data/l_6506bed106a029a15721586971004641>,
+          <http://ontodia.org/data/l_82886d4952e5db42aa9506f54731797e>, <http://ontodia.org/data/l_caf7744ee0fe38da65ccfa9ff1303ee8>,
+          <http://ontodia.org/data/l_821160208d5723552583ba552e2d3b0d>, <http://ontodia.org/data/l_0802ca07145a04645be67a8f4198421c>,
+          <http://ontodia.org/data/l_91f67317a6078cec15bf0c442b8c1930>, <http://ontodia.org/data/l_7b34f88a6bd79a76bfbddd5ee816fe78>,
+          <http://ontodia.org/data/l_adc3c1f47d04ec71d993de12fab1f6bc>, <http://ontodia.org/data/l_46058aca085b79690db73087462d1487>,
+          <http://ontodia.org/data/l_bc286fef5c136b4ca3ad3087e55ca435>, <http://ontodia.org/data/l_83475b8bdc102f74ac4b49e6870f23ee>,
+          <http://ontodia.org/data/l_2342d42829ecbb9609c1e006ecff1799>
+      ];
+    <http://ontodia.org/schema/v1#linkTypeOptions> [ a <http://ontodia.org/schema/v1#LinkTypeOptions>;
+        <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation-owl>;
+        <http://ontodia.org/schema/v1#showLabel> true;
+        <http://ontodia.org/schema/v1#visible> false
+      ];
+    <http://www.metaphacts.com/ontologies/platform#diagramForOntology> <https://beo/ontology/0.2>;
+    <http://www.metaphacts.com/ontologies/platform#diagramKind> <http://www.metaphacts.com/ontologies/platform#OntologyDiagram>;
+    <http://www.metaphacts.com/ontologies/platform#isDefaultDiagram> "true" .
+  
+  <http://ontodia.org/data/e_7b6ab14fb549543cfc82da65842cbb9b> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> false;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 870;
+        <http://ontodia.org/schema/v1#yCoordValue> -101
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Disease> .
+  
+  <http://ontodia.org/data/e_013f9e06fcce1f1fefa76224f0f79fc7> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> false;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> -19;
+        <http://ontodia.org/schema/v1#yCoordValue> 401
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Inmmunotherapy> .
+  
+  <http://ontodia.org/data/e_66c0aaf31bc5551bd4f0c35379d8b96d> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> false;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 970;
+        <http://ontodia.org/schema/v1#yCoordValue> 172
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Biomarker> .
+  
+  <http://ontodia.org/data/e_dc87aad1a415894570088e1172698f4c> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> false;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 254;
+        <http://ontodia.org/schema/v1#yCoordValue> -101
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Target> .
+  
+  <http://ontodia.org/data/e_8925a1e30666f2166e0a8dc2da025364> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> false;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 395;
+        <http://ontodia.org/schema/v1#yCoordValue> 144
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Evidence> .
+  
+  <http://ontodia.org/data/e_ba3d2cc9f1cb23cc0cb80e8ed04a025a> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> false;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 635;
+        <http://ontodia.org/schema/v1#yCoordValue> 88
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Publication> .
+  
+  <http://ontodia.org/data/e_ecac2b70d173ce64bec51706b339b1b9> a <http://ontodia.org/schema/v1#Element>;
+    <http://ontodia.org/schema/v1#elementState> [];
+    <http://ontodia.org/schema/v1#isExpanded> false;
+    <http://ontodia.org/schema/v1#position> [
+        <http://ontodia.org/schema/v1#xCoordValue> 770;
+        <http://ontodia.org/schema/v1#yCoordValue> 345
+      ];
+    <http://ontodia.org/schema/v1#resource> <https://beo/Response> .
+  
+  <http://ontodia.org/data/l_6506bed106a029a15721586971004641> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:5d0cea61a6a2c625e48806736416a>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_ecac2b70d173ce64bec51706b339b1b9>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_8925a1e30666f2166e0a8dc2da025364>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_82886d4952e5db42aa9506f54731797e> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:662f11ebd02386ccc8ce671c3cace>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_8925a1e30666f2166e0a8dc2da025364>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_ba3d2cc9f1cb23cc0cb80e8ed04a025a>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_caf7744ee0fe38da65ccfa9ff1303ee8> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:d44be1b20799e2f627b92b1bfc4b7>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_66c0aaf31bc5551bd4f0c35379d8b96d>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_013f9e06fcce1f1fefa76224f0f79fc7>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_821160208d5723552583ba552e2d3b0d> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:1c5e3a9f65e338f7902c0f37e0847b>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_66c0aaf31bc5551bd4f0c35379d8b96d>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_7b6ab14fb549543cfc82da65842cbb9b>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_0802ca07145a04645be67a8f4198421c> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:2b6f8fd86b71180c0bb40d01c719fc>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_ecac2b70d173ce64bec51706b339b1b9>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_66c0aaf31bc5551bd4f0c35379d8b96d>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_91f67317a6078cec15bf0c442b8c1930> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:3c70a1fe258e026af4b4f3ed63e922>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_ecac2b70d173ce64bec51706b339b1b9>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_013f9e06fcce1f1fefa76224f0f79fc7>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_7b34f88a6bd79a76bfbddd5ee816fe78> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:6afec35e5c947767d7d89fee947816>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_013f9e06fcce1f1fefa76224f0f79fc7>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_8925a1e30666f2166e0a8dc2da025364>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_adc3c1f47d04ec71d993de12fab1f6bc> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:60d1454d87978cbea5ce42efefb1c>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_dc87aad1a415894570088e1172698f4c>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_7b6ab14fb549543cfc82da65842cbb9b>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_46058aca085b79690db73087462d1487> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:726a4f286c2c7a0a1a08f0c5569e8>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_8925a1e30666f2166e0a8dc2da025364>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_7b6ab14fb549543cfc82da65842cbb9b>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_bc286fef5c136b4ca3ad3087e55ca435> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:31a8b91105ad2754bedf59a2a2175>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_ba3d2cc9f1cb23cc0cb80e8ed04a025a>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_ba3d2cc9f1cb23cc0cb80e8ed04a025a>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_83475b8bdc102f74ac4b49e6870f23ee> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:7cecd266e44276e04d16b06363b3d0e>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_013f9e06fcce1f1fefa76224f0f79fc7>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_dc87aad1a415894570088e1172698f4c>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  <http://ontodia.org/data/l_2342d42829ecbb9609c1e006ecff1799> a <http://ontodia.org/schema/v1#Link>;
+    <http://ontodia.org/schema/v1#resource> <http://ontodia.org/schema/v1#blank:rdf:675f2be470a657144baa83600d747d80>;
+    <http://ontodia.org/schema/v1#property> <http://www.metaphacts.com/metaschema#relation>;
+    <http://ontodia.org/schema/v1#source> <http://ontodia.org/data/e_66c0aaf31bc5551bd4f0c35379d8b96d>;
+    <http://ontodia.org/schema/v1#target> <http://ontodia.org/data/e_ba3d2cc9f1cb23cc0cb80e8ed04a025a>;
+    <http://ontodia.org/schema/v1#vertex> rdf:nil .
+  
+  [] <http://www.w3.org/ns/ldp#contains> <http://localhost:10214/container/ontodiaDiagramContainer/default_diagram> .
+}
