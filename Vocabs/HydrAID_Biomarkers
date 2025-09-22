@@ -1,0 +1,2090 @@
+@prefix beo: <https://beo/Biomarker/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ns1: <http://www.w3.org/2004/02/skos/core#> .
+
+beo:1 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "2,6-Dimethyl-4 heptanone"@en .
+
+beo:10 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "ASR gene signature"@en .
+
+beo:100 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Collinsella aerofaciens"@en .
+
+beo:101 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Comamonas"@en .
+
+beo:102 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Coprobacillus"@en .
+
+beo:103 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Copy number alteration"@en .
+
+beo:104 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Corticosteroids"@en .
+
+beo:105 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Corynebacterium"@en .
+
+beo:106 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "D-dimer measurement"@en .
+
+beo:107 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "DNA damage response pathway mutations"@en .
+
+beo:108 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "DNA methylation"@en .
+
+beo:109 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "DNAH17-AS1"@en .
+
+beo:11 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "ATRX mutations"@en .
+
+beo:110 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Dendritic Cells"@en .
+
+beo:111 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Deoxycholic acid"@en .
+
+beo:112 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Desulfitobacter"@en .
+
+beo:113 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Desulfovibrio"@en .
+
+beo:114 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Desulfovibrio desulfuricans"@en .
+
+beo:115 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Dialister"@en .
+
+beo:116 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Dodecane"@en .
+
+beo:117 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Dorea formicigenerans"@en .
+
+beo:118 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "EGFR G719 mutation"@en .
+
+beo:119 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "EGFR L858R mutation"@en .
+
+beo:12 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Absolute lymphocyte count"@en .
+
+beo:120 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "EGFR L861Q mutation"@en .
+
+beo:121 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "EGFR S768I mutation"@en .
+
+beo:122 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "EGFR T790M mutation"@en .
+
+beo:123 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "EGFR amplification"@en .
+
+beo:124 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "EGFR exon 19 deletion"@en .
+
+beo:125 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "EGFR exon 19 insertion"@en .
+
+beo:126 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "EGFR exon 20 insertion"@en .
+
+beo:127 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "EGFR mutations"@en .
+
+beo:128 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "EGFR wild-type"@en .
+
+beo:129 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "EML4-ALK fusion"@en .
+
+beo:13 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Absolute neutrophil count"@en .
+
+beo:130 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "EPHA5 mutations"@en .
+
+beo:131 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Enterobacteriaceae"@en .
+
+beo:132 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Eosinophil count"@en .
+
+beo:133 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Escherichia shigella"@en .
+
+beo:134 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Eubacterium"@en .
+
+beo:135 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Extractable Nuclear Antigen Antibody"@en .
+
+beo:136 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "FAT1 mutations"@en .
+
+beo:137 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "FAT2 mutations"@en .
+
+beo:138 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "FAT3 mutations"@en .
+
+beo:139 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "FAT4 mutations"@en .
+
+beo:14 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Acetic acid"@en .
+
+beo:140 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "FOXP1"@en .
+
+beo:141 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "FOXP3"@en .
+
+beo:142 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Faecalibacterium"@en .
+
+beo:143 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Faecalitalea cylindroides"@en .
+
+beo:144 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Firmicutes phylum"@en .
+
+beo:145 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Follicular Helper T Cells"@en .
+
+beo:146 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "G-MDSC-to-MDSC ratio"@en .
+
+beo:147 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "GALNT2 levels"@en .
+
+beo:148 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "GCA-900066755"@en .
+
+beo:149 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "GLI1 expression levels"@en .
+
+beo:15 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Acetobacteraceae"@en .
+
+beo:150 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Gastrointestinal Microbiome"@en .
+
+beo:151 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Gemella haemolysans"@en .
+
+beo:152 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Gemella sanguinis"@en .
+
+beo:153 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Gender"@en .
+
+beo:154 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Glasgow prognostic score"@en .
+
+beo:155 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Glycerol"@en .
+
+beo:156 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Glyoxylate and dicarboxylate metabolism"@en .
+
+beo:157 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Granulicatella"@en .
+
+beo:158 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Granulocytes"@en .
+
+beo:159 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Granzyme B"@en .
+
+beo:16 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Acetoin"@en .
+
+beo:160 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "HIF1A-AS1"@en .
+
+beo:161 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "HLA-A alleles"@en .
+
+beo:162 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Haemophilus"@en .
+
+beo:163 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Haptoglobins"@en .
+
+beo:164 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Heptane, 3.4-dimethyl"@en .
+
+beo:165 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Histamine-2-Receptor Antagonists"@en .
+
+beo:166 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Histological subtype"@en .
+
+beo:167 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Holdemania"@en .
+
+beo:168 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Homologous recombination deficiency"@en .
+
+beo:169 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Homologous recombination repair pathway"@en .
+
+beo:17 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Acinetobacter"@en .
+
+beo:170 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Hungatella"@en .
+
+beo:171 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "IDO1 expression"@en .
+
+beo:172 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "IFNG levels"@en .
+
+beo:173 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "IL-10 levels"@en .
+
+beo:174 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "IL-13 levels"@en .
+
+beo:175 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "IL-17 levels"@en .
+
+beo:176 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "IL-18 levels"@en .
+
+beo:177 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "IL-1? levels"@en .
+
+beo:178 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "IL-2 levels"@en .
+
+beo:179 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "IL-4 levels"@en .
+
+beo:18 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Actinocatenispora"@en .
+
+beo:180 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "IL-5 levels"@en .
+
+beo:181 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "IL-6 levels"@en .
+
+beo:182 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "IL-8 levels"@en .
+
+beo:183 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Immune gene signature"@en .
+
+beo:184 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Immune-related adverse events"@en .
+
+beo:185 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Immunogenic mutations"@en .
+
+beo:186 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Immunogenicity"@en .
+
+beo:187 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Immunosuppressive cells"@en .
+
+beo:188 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Indole"@en .
+
+beo:189 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Indole derivatives"@en .
+
+beo:19 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Acute Phase Proteins"@en .
+
+beo:190 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Inflamed immune phenotype"@en .
+
+beo:191 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Interferon receptor signalling"@en .
+
+beo:192 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Interferon-gamma"@en .
+
+beo:193 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Interferon-gamma gene signature"@en .
+
+beo:194 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Interstitial lung disease"@en .
+
+beo:195 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Intratumoral immune cell infiltration"@en .
+
+beo:196 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "KDM5C mutations"@en .
+
+beo:197 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "KEAP1 mutations"@en .
+
+beo:198 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "KMT2C mutations"@en .
+
+beo:199 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "KRAS mutations"@en .
+
+beo:2 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "2-Pentanone"@en .
+
+beo:20 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Advanced lung cancer inflammation index"@en .
+
+beo:200 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Ketones"@en .
+
+beo:201 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Ki-67"@en .
+
+beo:202 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Killer-Cell Immunoglobulin-Like Receptor"@en .
+
+beo:203 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "L-citrulline"@en .
+
+beo:204 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "LAG3 expression"@en .
+
+beo:205 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Lachnospiraceae"@en .
+
+beo:206 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Lactate"@en .
+
+beo:207 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Lactate Dehydrogenase"@en .
+
+beo:208 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Lactobacillales"@en .
+
+beo:209 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Lactococcus"@en .
+
+beo:21 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Agathobacter"@en .
+
+beo:210 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Leuconostoc"@en .
+
+beo:211 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Leukoencephalopathy"@en .
+
+beo:212 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Lipoic acid metabolism"@en .
+
+beo:213 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Lipolysis"@en .
+
+beo:214 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Liver metastases"@en .
+
+beo:215 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Lung_Immune_Prognostic_Index"@en .
+
+beo:217 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Lymph node status"@en .
+
+beo:218 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Lymphocyte-to-monocyte ratio"@en .
+
+beo:219 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Lysine"@en .
+
+beo:22 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Age"@en .
+
+beo:220 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "M-MDSC-to-MDSC ratio"@en .
+
+beo:221 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "M2 macrophages"@en .
+
+beo:222 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "MALAT1"@en .
+
+beo:223 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "MDM2 amplification"@en .
+
+beo:224 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "MET exon 14 skipping mutation"@en .
+
+beo:225 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "MGAM mutations"@en .
+
+beo:226 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "MHC Class I Gene"@en .
+
+beo:227 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Macrophages"@en .
+
+beo:228 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Major pathologic response"@en .
+
+beo:229 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Marinospirillum minutulum"@en .
+
+beo:23 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Akkermansia"@en .
+
+beo:230 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Mast cells"@en .
+
+beo:231 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Memory T-Lymphocytes"@en .
+
+beo:232 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Metabolic Tumor Volume"@en .
+
+beo:233 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Metabolite panel"@en .
+
+beo:234 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Metastases"@en .
+
+beo:235 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Methanobacteriales"@en .
+
+beo:236 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Methanobrevibacter"@en .
+
+beo:237 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Methanococcus"@en .
+
+beo:238 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Methyl isobutyl ketone"@en .
+
+beo:239 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Microbiome"@en .
+
+beo:24 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Albumin"@en .
+
+beo:240 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Mogibacteriaceae"@en .
+
+beo:241 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Molecular signature"@en .
+
+beo:242 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Monocytes"@en .
+
+beo:243 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Monoglobales"@en .
+
+beo:244 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Myeloid cells"@en .
+
+beo:245 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Myeloid-Derived Suppressor Cells"@en .
+
+beo:246 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "NEAT1 expression"@en .
+
+beo:247 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "NFE2L2 mutations"@en .
+
+beo:248 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "NK cells"@en .
+
+beo:249 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "NOTCH pathway"@en .
+
+beo:25 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Alcohols"@en .
+
+beo:250 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "NOTCH4 mutations"@en .
+
+beo:251 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "NRF2-dependent gene signature"@en .
+
+beo:252 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "NSAID use"@en .
+
+beo:253 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "NSE score"@en .
+
+beo:254 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Negativicutes"@en .
+
+beo:255 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Neutrophil-to-lymphocyte ratio"@en .
+
+beo:256 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Neutrophils"@en .
+
+beo:257 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Nicotinic acid"@en .
+
+beo:258 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Nocardioides"@en .
+
+beo:259 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Nomogram"@en .
+
+beo:26 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Aldehydes"@en .
+
+beo:260 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Non-homologous end joining pathway"@en .
+
+beo:261 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Nucleotide excision repair pathway"@en .
+
+beo:262 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "OLR1"@en .
+
+beo:263 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "OX40"@en .
+
+beo:264 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "OX40L"@en .
+
+beo:265 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Organ dysfunction"@en .
+
+beo:266 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Oscillospira"@en .
+
+beo:267 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "PD-L1"@en .
+
+beo:268 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "PD-L1+ Myeloid-Derived Suppressor Cells"@en .
+
+beo:269 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "PDCD1"@en .
+
+beo:27 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Alistipes"@en .
+
+beo:270 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "PDCD1LG2"@en .
+
+beo:271 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "PI3K/AKT pathway"@en .
+
+beo:272 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "POLE mutation"@en .
+
+beo:273 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "PPAR signaling pathway"@en .
+
+beo:274 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "PS score"@en .
+
+beo:275 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "PTCH1 expression"@en .
+
+beo:276 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "PTEN deletion"@en .
+
+beo:277 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "PTEN mutations"@en .
+
+beo:278 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "PTGES3"@en .
+
+beo:279 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Paludicola"@en .
+
+beo:28 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Amyloid A"@en .
+
+beo:280 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Parabacteroides"@en .
+
+beo:281 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Parabacteroides merdae"@en .
+
+beo:282 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Paraprevotella clara"@en .
+
+beo:283 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Parasutterella"@en .
+
+beo:284 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Patient reported outcome"@en .
+
+beo:285 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Peptococcaceae"@en .
+
+beo:286 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Peptostreptococcaceae"@en .
+
+beo:287 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Performance status"@en .
+
+beo:288 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Period of time since the previous treatment"@en .
+
+beo:289 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Phascolarctobacterium"@en .
+
+beo:29 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Anethole"@en .
+
+beo:290 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Phenol"@en .
+
+beo:291 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Plantactinospora"@en .
+
+beo:292 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Plasma cells"@en .
+
+beo:293 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Platelet-to-lymphocyte ratio"@en .
+
+beo:294 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Polypharmacy"@en .
+
+beo:295 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Postbiotic use"@en .
+
+beo:296 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Prednisone"@en .
+
+beo:297 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Previous therapy"@en .
+
+beo:298 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Prevotella"@en .
+
+beo:299 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Probiotic use"@en .
+
+beo:3 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "3-Methyl butanal"@en .
+
+beo:30 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Antibiotic use"@en .
+
+beo:300 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Procalcitonin levels"@en .
+
+beo:301 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Prognostic nutritional index"@en .
+
+beo:302 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Prolactin"@en .
+
+beo:303 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Propionate"@en .
+
+beo:304 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Propionic acid"@en .
+
+beo:305 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Proton pump inhibitor use"@en .
+
+beo:306 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Pseudarcicella hirudinis"@en .
+
+beo:307 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Pseudomonas"@en .
+
+beo:308 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Psychrobacter alimentarius"@en .
+
+beo:309 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Pyridine"@en .
+
+beo:31 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Antinuclear Antibodies"@en .
+
+beo:310 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Quinolinic acid"@en .
+
+beo:311 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "RAS/MAPK pathway"@en .
+
+beo:312 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "RECIST criteria"@en .
+
+beo:313 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "RF32 order"@en .
+
+beo:314 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "ROS1 mutations"@en .
+
+beo:315 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "ROS1 rearrangement"@en .
+
+beo:316 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "RYR1"@en .
+
+beo:317 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Radiation"@en .
+
+beo:318 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Radiological sign"@en .
+
+beo:319 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Radiomics score"@en .
+
+beo:32 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Atopobium"@en .
+
+beo:320 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Raoultella"@en .
+
+beo:321 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Regulatory T-Lymphocytes"@en .
+
+beo:322 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Rikenellaceae"@en .
+
+beo:323 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Romboutsia"@en .
+
+beo:324 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Roseburia"@en .
+
+beo:325 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Ruminococcaceae"@en .
+
+beo:326 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "SDPR"@en .
+
+beo:327 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "SHH"@en .
+
+beo:328 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "SMO"@en .
+
+beo:329 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "STK11 mutations"@en .
+
+beo:33 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "AuSERP"@en .
+
+beo:330 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Saccharomyces"@en .
+
+beo:331 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Selenomonadales"@en .
+
+beo:332 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Serum Albumin"@en .
+
+beo:333 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Short chain fatty acids"@en .
+
+beo:334 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Shuttleworthia"@en .
+
+beo:335 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Sinomonas"@en .
+
+beo:336 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Smoking status"@en .
+
+beo:337 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Smooth Muscle Antibody"@en .
+
+beo:338 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Somatic mutation load"@en .
+
+beo:339 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Spirosomaceae"@en .
+
+beo:34 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "B-Lymphocytes"@en .
+
+beo:340 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Squamous histology"@en .
+
+beo:341 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Standardized Uptake Value"@en .
+
+beo:342 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Stereotactic Radiosurgery"@en .
+
+beo:343 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Streptococcus"@en .
+
+beo:344 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Sutterella"@en .
+
+beo:345 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "T-Cell Exhaustion"@en .
+
+beo:346 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "T-Cell Receptor"@en .
+
+beo:347 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "T-Lymphocytes"@en .
+
+beo:348 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "T-cell inflammatory gene expression profile"@en .
+
+beo:349 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "T-cell signature"@en .
+
+beo:35 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "B2M mutations"@en .
+
+beo:350 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "T-effector gene signature"@en .
+
+beo:351 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "TCA cycle"@en .
+
+beo:352 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "TCR"@en .
+
+beo:353 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "TGF-? CAF gene signature"@en .
+
+beo:354 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "TIGIT expression"@en .
+
+beo:355 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "TIM3"@en .
+
+beo:356 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "TMPMP"@en .
+
+beo:357 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "TNF-alpha"@en .
+
+beo:358 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "TNFRSF14"@en .
+
+beo:359 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "TNFSF8 methlylation status"@en .
+
+beo:36 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "BCOR"@en .
+
+beo:360 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "TP53 mutations"@en .
+
+beo:361 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "TROP2 overexpression"@en .
+
+beo:362 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "TTF1"@en .
+
+beo:363 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Tannerellaceae"@en .
+
+beo:364 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Terpenes"@en .
+
+beo:365 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Terrabacter"@en .
+
+beo:366 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Terracidiphilus"@en .
+
+beo:367 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Tertiary lymphoid structure"@en .
+
+beo:368 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Third-Line Therapy"@en .
+
+beo:369 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Time since start of first-line therapy"@en .
+
+beo:37 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "BP180-specific immunoglobulin G"@en .
+
+beo:370 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Time-to-treatment discontinuation"@en .
+
+beo:371 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Total Lesion Glycolysis"@en .
+
+beo:372 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Treatment history"@en .
+
+beo:373 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Treg-to-CD4+ ratio"@en .
+
+beo:374 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Tridecane"@en .
+
+beo:375 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Tryptophan metabolism"@en .
+
+beo:376 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Tumor Infiltrating Lymphocytes"@en .
+
+beo:377 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Tumor Mutation Index"@en .
+
+beo:378 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Tumor Mutational Burden"@en .
+
+beo:379 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Tumor burden"@en .
+
+beo:38 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "BTLA expression levels"@en .
+
+beo:380 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Tumor diameter"@en .
+
+beo:381 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Tumor growth rate"@en .
+
+beo:382 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Tumor microenvironment"@en .
+
+beo:383 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Tumor-Associated Macrophages"@en .
+
+beo:384 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "UBL mutations"@en .
+
+beo:385 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "VEGF"@en .
+
+beo:386 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Veillonella"@en .
+
+beo:387 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Veillonella atypica"@en .
+
+beo:388 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Veillonella dispar"@en .
+
+beo:389 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Veillonella parvula"@en .
+
+beo:39 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "BUB3 levels"@en .
+
+beo:390 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "WBC"@en .
+
+beo:391 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "WNT signalling pathway"@en .
+
+beo:392 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Writer-Score"@en .
+
+beo:393 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "XIST"@en .
+
+beo:394 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "YAP/TAZ"@en .
+
+beo:395 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "ZFHX3 mutations"@en .
+
+beo:396 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "alpha 1-Antitrypsin (AAT)"@en .
+
+beo:397 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "cfDNA"@en .
+
+beo:398 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "circRNA"@en .
+
+beo:399 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "ctDNA"@en .
+
+beo:4 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "3-Methyl indole"@en .
+
+beo:40 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Bacteroides"@en .
+
+beo:400 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "host immune-nutritional condition"@en .
+
+beo:401 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "iSEND model"@en .
+
+beo:402 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "lncRNAs"@en .
+
+beo:403 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "miR-200a"@en .
+
+beo:404 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "miR-20a"@en .
+
+beo:405 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "miR-320"@en .
+
+beo:406 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "miR-374a"@en .
+
+beo:407 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "miR-374b"@en .
+
+beo:408 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "miR-625"@en .
+
+beo:409 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "miRNA"@en .
+
+beo:41 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Barnesiellaceae"@en .
+
+beo:410 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "miRNA signature"@en .
+
+beo:411 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "miRNA-signature classifier"@en .
+
+beo:412 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "modified Glasgow prognostic score"@en .
+
+beo:413 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "p-Cresol"@en .
+
+beo:414 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "1-acid glycoprotein (AGP)"@en .
+
+beo:42 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Base excision repair pathway"@en .
+
+beo:43 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Bifidobacterium"@en .
+
+beo:44 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Bile acid biosynthesis pathway"@en .
+
+beo:45 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "BiomeOne"@en .
+
+beo:46 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Blautia"@en .
+
+beo:47 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Blood genomic mutation signature"@en .
+
+beo:48 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Body Mass Index"@en .
+
+beo:49 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Bone Metastases"@en .
+
+beo:5 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "5-gene mutation signature"@en .
+
+beo:50 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Brachybacterium"@en .
+
+beo:51 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Bradyrhizobium"@en .
+
+beo:52 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Burkholderia anthina"@en .
+
+beo:53 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Butanoic acid ethyl ester"@en .
+
+beo:54 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Butyrate"@en .
+
+beo:55 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Butyric acid"@en .
+
+beo:56 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Butyricicoccaceae"@en .
+
+beo:57 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Butyrivibrio"@en .
+
+beo:58 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "C-PLAN index"@en .
+
+beo:59 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CA-125 levels"@en .
+
+beo:6 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "ALK fusion"@en .
+
+beo:60 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CA-19-9 levels"@en .
+
+beo:61 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CCR4"@en .
+
+beo:62 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CD103"@en .
+
+beo:63 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CD16+ CD56+ immune cells"@en .
+
+beo:64 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CD163 expression"@en .
+
+beo:65 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CD19+ immune cells"@en .
+
+beo:66 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CD226 expression"@en .
+
+beo:67 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CD28 expression"@en .
+
+beo:68 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CD3+ TILs"@en .
+
+beo:69 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CD3+ immune cells"@en .
+
+beo:7 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "ALK mutations"@en .
+
+beo:70 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CD3- CD16+ CD56+ cells"@en .
+
+beo:71 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CD4 T Cell to CD8 T Cell Ratio"@en .
+
+beo:72 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CD4-Positive T-Lymphocytes"@en .
+
+beo:73 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CD47"@en .
+
+beo:74 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CD8"@en .
+
+beo:75 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CD8 T-effector gene signature"@en .
+
+beo:76 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CD8-Positive_T-Lymphocytes"@en .
+
+beo:78 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CEA levels"@en .
+
+beo:79 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CHKCI002"@en .
+
+beo:8 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "ALK wild-type"@en .
+
+beo:80 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CRP levels"@en .
+
+beo:81 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CX3CR1 score"@en .
+
+beo:82 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CXCL1"@en .
+
+beo:83 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CXCL10"@en .
+
+beo:84 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CXCL5"@en .
+
+beo:85 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CXCL9"@en .
+
+beo:86 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CXCR2 expression"@en .
+
+beo:87 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CYFRA 21-1 levels"@en .
+
+beo:88 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "CYTIP methylation status"@en .
+
+beo:89 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Candidatus thioglobus"@en .
+
+beo:9 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "ANGPT2"@en .
+
+beo:90 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Cardiobacteriaceae"@en .
+
+beo:91 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Caryophyllene"@en .
+
+beo:92 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Catenulisporaceae"@en .
+
+beo:93 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Cerebral metastases"@en .
+
+beo:94 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Ceroluplasmin (CP)"@en .
+
+beo:95 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Christensenellaceae"@en .
+
+beo:96 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Chronic obstructive pulmonary disease"@en .
+
+beo:97 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Circulating lymphocytes"@en .
+
+beo:98 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Clostridiales"@en .
+
+beo:99 a skos:Concept ;
+    skos:broader beo:0 ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Clostridium butyricum"@en .
+
+beo:0 a skos:Concept ;
+    skos:inScheme beo:Scheme ;
+    skos:prefLabel "Biomarker"@en ;
+    skos:topConceptOf beo:Scheme .
+
+beo:Scheme a skos:ConceptScheme ;
+    skos:hasTopConcept beo:0 ;
+    skos:prefLabel "HydrAID_Biomarkers"@en .
+
+<https://beo/Biomarker/108> ns1:exactMatch <http://ontology.roche.com/2024aa-NCIC155656> .
+
+<https://beo/Biomarker/234> ns1:exactMatch <http://ontology.roche.com/2024aa-NCIC18396> .
+
+<https://beo/Biomarker/241> ns1:exactMatch <http://ontology.roche.com/2024aa-NCIC48181> .
+
+<https://beo/Biomarker/346> ns1:exactMatch <http://ontology.roche.com/2024aa-NCIC129657> .
+
+<https://beo/Biomarker/375> ns1:exactMatch <http://ontology.roche.com/2024aa-NCIC129885> .
+
+<https://beo/Biomarker/378> ns1:exactMatch <http://ontology.roche.com/2024aa-NCIC150128> ;
+    ns1:narrower <http://ontology.roche.com/2024aa-NCIC129769> .
+
+<https://beo/Biomarker/382> ns1:exactMatch <http://ontology.roche.com/2024aa-NCIC107486> .
+
+
+
