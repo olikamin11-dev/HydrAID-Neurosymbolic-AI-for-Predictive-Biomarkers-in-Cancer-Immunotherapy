@@ -1,0 +1,106 @@
+prefixes:
+  beo: https://beo/
+  skos: http://www.w3.org/2004/02/skos/core#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+mappings:    
+  Disease: 
+    sources:
+      - [HydrAID_9_2024_new_model.csv~csv]
+    s: beo:Disease/$(Disease_UID)
+    po:
+      - [a, beo:Disease]
+      - [rdfs:label, $(Disease_name)]
+      - [beo:diseaseName, $(Disease_name)]
+      - [beo:diseaseDetails, $(Disease_details)]
+      - [beo:diseaseId, $(Disease_ID)]
+      - [beo:diseaseOrgan, $(Disease_Organ)]
+      - [beo:diseaseUid, $(Disease_UID)]
+
+  Biomarker:
+    sources:
+      - [HydrAID_9_2024_new_model.csv~csv]
+    s: beo:Biomarker/$(Biomarker_ID)
+    po: 
+      - [a, beo:Biomarker]
+      - [rdfs:label, $(Biomarker_name)]
+      - [beo:biomarkerName, $(Biomarker_name)]
+      - [beo:biomarkerUid, $(Biomarker_UID)]
+      - [beo:biomarkerCathegory, $(Biomarker_cathegory)]
+      - [beo:biomarkerAnnotation, $(Biomarker_annotation)]
+      - [beo:biomarkerType, $(Biomarker_type)]
+      - [beo:biomarkerId, $(Biomarker_ID)]
+      - [beo:isAssociatedWith, https://beo/Disease/$(Disease_UID)~iri]
+      - [beo:isAssociatedWith, https://beo/Inmmunotherapy/$(Therapy_ID)~iri]
+      - [https://beo/hasReference, beo:Publication/$(Publication_PMID)~iri]
+
+
+  Target:
+    sources:
+      - [HydrAID_9_2024_new_model.csv~csv]
+    s: beo:Target/$(Target_ID)
+    po:
+      - [a, beo:Target]
+      - [rdfs:label, $(Target_name)]
+      - [beo:targetName, $(Target_name)]
+      - [beo:targetUniprotId, $(Target_Uniprot_ID)]
+      - [beo:isAssociatedWith, https://beo/Disease/$(Disease_UID)~iri]
+
+  Inmmunotherapy:
+    sources:
+      - [HydrAID_9_2024_new_model.csv~csv] 
+    s: beo:Inmmunotherapy/$(Therapy_ID) 
+    po:
+      - [a, beo:Inmmunotherapy]
+      - [rdfs:label, $(Therapy_name)]
+      - [beo:therapyName, $(Therapy_name)]
+      - [beo:therapyDrugClass, $(Therapy_drug_class)]
+      - [beo:therapyDetails, $(Therapy_details)]
+      - [beo:therapyControl, $(Therapy_control)]
+      - [beo:target, https://beo/Target/$(Target_ID)~iri]
+      - [beo:isAssociatedWith, https://beo/Evidence/$(Evidence_ID)~iri]
+
+  Evidence:
+    sources:
+      - [HydrAID_9_2024_new_model.csv~csv]
+    s: beo:Evidence/$(Evidence_ID) 
+    po:
+      - [a, beo:Evidence]
+      - [rdfs:label, $(Evidence_label)]
+      - [beo:evidenceSource, $(Evidence_source_ID)]
+      - [beo:evidenceClinicalSignificanceName, $(Evidence_clinical_significance_name)]
+      - [beo:evidenceID, $(Evidence_ID)]
+      - [beo:evidenceAdverseEvent, $(Evidence_adverse_event)] 
+      - [beo:evidenceStudyDesign, $(Evidence_study_design)]
+      - [beo:evidenceExperimentalPopulation, $(Evidence_study_experimental_population)]
+      - [beo:evidenceControlSampleSize, $(Evidence_control_sample_size)]
+      - [beo:evidenceBiomarker, https://beo/Biomarker/$(Biomarker_ID)~iri]
+      - [beo:evidenceImmunotherapy, https://beo/Inmmunotherapy/$(Therapy_ID)~iri]
+      - [beo:evidenceDisease, https://beo/Disease/$(Disease_UID)~iri]
+      - [beo:evidenceResponse, https://beo/Response/$(Biomarker_association)~iri]
+      - [beo:isAssociatedWith, https://beo/Disease/$(Disease_UID)~iri]
+      - [https://beo/hasReference, beo:Publication/$(Publication_PMID)~iri]
+
+  Publication: 
+    sources:
+      - [HydrAID_9_2024_new_model.csv~csv]
+    s: beo:Publication/$(Publication_PMID) 
+    po:
+      - [a, beo:Publication]
+      - [rdfs:label, $(Publication_title)]
+      - [http://purl.org/spar/fabio/hasPublicationYear, $(Publication_year)]
+      - [beo:publicationTitle, $(Publication_title)]
+      - [beo:publicationJournal, $(Publication_journal)]
+      - [beo:publicationPMID, $(Publication_PMID)]
+
+  Response: 
+    sources:
+      - [HydrAID_9_2024_new_model.csv~csv]
+    s: beo:Response/$(Biomarker_association) 
+    po:
+      - [a, beo:Response]
+      - [rdfs:label, $(Biomarker_association)]
+      - [beo:biomarkerAssociation, $(Biomarker_association)]
+      - [beo:refersTo, https://beo/Biomarker/$(Biomarker_ID)~iri]
+      - [beo:refersTo, https://beo/Inmmunotherapy/$(Therapy_ID)~iri]
