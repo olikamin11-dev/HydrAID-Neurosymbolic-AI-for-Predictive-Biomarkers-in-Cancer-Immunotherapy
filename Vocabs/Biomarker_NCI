@@ -1,0 +1,686 @@
+@prefix rts-core: <http://ontology.roche.com/model/rts/core/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf4j: <http://rdf4j.org/schema/rdf4j#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+
+<http://ontology.roche.com/2024aa-NCIC16342> skos:broader <http://ontology.roche.com/2024aa-NCIC20047>;
+  skos:prefLabel "Biomarker";
+  skos:altLabel "Biologic Markers", "Markers, Biological", "Molecular Marker", "Biological Marker",
+    "Marker, Biological", "Biologic Marker", "Biomarkers", "Signature Molecule", "Markers, Biologic",
+    "Marker, Biologic";
+  skos:related "C16342", "C0005516" .
+
+<http://ontology.roche.com/2024aa-NCIC97139> skos:broader <http://ontology.roche.com/2024aa-NCIC16342>;
+  skos:prefLabel "Proteomic Profile";
+  skos:related "C97139", "C3463810" .
+
+<http://ontology.roche.com/2024aa-NCIC68753> skos:broader <http://ontology.roche.com/2024aa-NCIC16342>;
+  skos:prefLabel "Genomic Biomarker";
+  skos:related "C68753", "C2348747" .
+
+<http://ontology.roche.com/2024aa-NCIC201364> skos:broader <http://ontology.roche.com/2024aa-NCIC16342>;
+  skos:prefLabel "Predictive Biomarker";
+  skos:altLabel "Exposure Predictive Biomarker";
+  skos:related "C5856754", "C201364" .
+
+<http://ontology.roche.com/2024aa-NCIC25212> skos:broader <http://ontology.roche.com/2024aa-NCIC16342>;
+  skos:prefLabel "End Point";
+  skos:altLabel "Endpoint", "End-Point";
+  skos:related "C25212", "C2349179" .
+
+<http://ontology.roche.com/2024aa-NCIC192188> skos:broader <http://ontology.roche.com/2024aa-NCIC16342>;
+  skos:prefLabel "HLA Class I Panel Reactive Antibody";
+  skos:altLabel "MHC Class I Panel Reactive Antibody", "Human Leukocyte Antigen Class I Panel Reactive Antibody",
+    "HLA Class I PRA", "Class I PRA", "Major Histocompatibility Complex Class I Panel Reactive Antibody";
+  skos:related "C5784967", "C192188" .
+
+<http://ontology.roche.com/2024aa-NCIC104680> skos:broader <http://ontology.roche.com/2024aa-NCIC16342>;
+  skos:prefLabel "Ancestry-Informative Marker";
+  skos:altLabel "Ancestry Informative Marker", "AIM";
+  skos:related "C3540472", "C104680" .
+
+<http://ontology.roche.com/2024aa-NCIC20069> skos:broader <http://ontology.roche.com/2024aa-NCIC16342>;
+  skos:prefLabel "Prognostic Marker";
+  skos:altLabel "Molecular Marker of Prognosis", "Prognosis Marker";
+  skos:related "C20069", "C1514475" .
+
+<http://ontology.roche.com/2024aa-NCIC78347> skos:broader <http://ontology.roche.com/2024aa-NCIC16342>;
+  skos:prefLabel "Cluster of Differentiation";
+  skos:altLabel "CD Antigen", "Cluster of Designation", "Classification Determinant",
+    "Cluster of Differentiation Antigens", "Differentiation Antigen";
+  skos:related "C1955216", "C78347" .
+
+<http://ontology.roche.com/2024aa-NCIC201303> skos:broader <http://ontology.roche.com/2024aa-NCIC16342>;
+  skos:prefLabel "Response Biomarker";
+  skos:altLabel "Exposure Response Biomarker";
+  skos:related "C201303", "C5856695" .
+
+<http://ontology.roche.com/2024aa-NCIC18520> skos:broader <http://ontology.roche.com/2024aa-NCIC16342>;
+  skos:prefLabel "Metabolic Marker";
+  skos:related "C18520", "C1513159" .
+
+<http://ontology.roche.com/2024aa-NCIC114790> skos:broader <http://ontology.roche.com/2024aa-NCIC16342>;
+  skos:prefLabel "Apoptosis Marker";
+  skos:altLabel "Marker of Apoptosis", "Apoptosis Biomarker";
+  skos:related "C3900018", "C114790" .
+
+<http://ontology.roche.com/2024aa-NCIC18493> skos:broader <http://ontology.roche.com/2024aa-NCIC16342>;
+  skos:prefLabel "Risk Marker";
+  skos:altLabel "Markers, Risk";
+  skos:related "C18493", "C1519104" .
+
+<http://ontology.roche.com/2024aa-NCIC68763> skos:broader <http://ontology.roche.com/2024aa-NCIC16342>;
+  skos:prefLabel "Valid Biomarker";
+  skos:related "C2349100", "C68763" .
+
+<http://ontology.roche.com/2024aa-NCIC142724> skos:broader <http://ontology.roche.com/2024aa-NCIC16342>;
+  skos:prefLabel "Surrogate Marker";
+  skos:altLabel "Marker, Surrogate", "Markers, Surrogate";
+  skos:related "C0086589", "C142724" .
+
+<http://ontology.roche.com/2024aa-NCIC48181> skos:broader <http://ontology.roche.com/2024aa-NCIC16342>;
+  skos:prefLabel "Molecular Signature";
+  skos:altLabel "Molecular Profile", "Molecular Fingerprint";
+  skos:related "C48181", "C1704864" .
+
+<http://ontology.roche.com/2024aa-NCIC201367> skos:broader <http://ontology.roche.com/2024aa-NCIC16342>;
+  skos:prefLabel "Safety Biomarker";
+  skos:altLabel "Exposure Safety Biomarker";
+  skos:related "C201367", "C5856757" .
+
+<http://ontology.roche.com/2024aa-NCIC201363> skos:broader <http://ontology.roche.com/2024aa-NCIC16342>;
+  skos:prefLabel "Prognostic Biomarker";
+  skos:related "C201363", "C5856753" .
+
+<http://ontology.roche.com/2024aa-NCIC143955> skos:broader <http://ontology.roche.com/2024aa-NCIC16342>;
+  skos:prefLabel "Blood Inflammatory Marker";
+  skos:related "C143955", "C4685003" .
+
+<http://ontology.roche.com/2024aa-NCIC82987> skos:broader <http://ontology.roche.com/2024aa-NCIC16342>;
+  skos:prefLabel "T-Cell Marker";
+  skos:related "C2826610", "C82987" .
+
+<http://ontology.roche.com/2024aa-NCIC201361> skos:broader <http://ontology.roche.com/2024aa-NCIC16342>;
+  skos:prefLabel "Diagnostic Biomarker";
+  skos:related "C201361", "C5856751" .
+
+<http://ontology.roche.com/2024aa-NCIC124262> skos:broader <http://ontology.roche.com/2024aa-NCIC16342>;
+  skos:prefLabel "Flow-Mediated Vasodilation";
+  skos:altLabel "Flow-Mediated Vascular Reactivity";
+  skos:related "C4085863", "C124262" .
+
+<http://ontology.roche.com/2024aa-NCIC18329> skos:broader <http://ontology.roche.com/2024aa-NCIC16342>;
+  skos:prefLabel "Disease Marker";
+  skos:altLabel "Markers, Disease", "Marker, Disease";
+  skos:related "C18329", "C1511983" .
+
+<http://ontology.roche.com/2024aa-NCIC201362> skos:broader <http://ontology.roche.com/2024aa-NCIC16342>;
+  skos:prefLabel "Monitoring Biomarker";
+  skos:altLabel "Exposure Monitoring Biomarker";
+  skos:related "C201362", "C5856752" .
+
+<http://ontology.roche.com/2024aa-NCIC201360> skos:broader <http://ontology.roche.com/2024aa-NCIC16342>;
+  skos:prefLabel "Susceptibility Biomarker";
+  skos:related "C5856750", "C201360" .
+
+<http://ontology.roche.com/2024aa-NCIC129886> skos:broader <http://ontology.roche.com/2024aa-NCIC97139>;
+  skos:prefLabel "Cytokine Expression Profile";
+  skos:altLabel "Cytokine Profile";
+  skos:related "C4329694", "C129886" .
+
+<http://ontology.roche.com/2024aa-NCIC129758> skos:broader <http://ontology.roche.com/2024aa-NCIC97139>;
+  skos:prefLabel "Phosphoprotein Profile";
+  skos:altLabel "Phospho-Protein Profile";
+  skos:related "C129758", "C4331006" .
+
+<http://ontology.roche.com/2024aa-NCIC129658> skos:broader <http://ontology.roche.com/2024aa-NCIC97139>;
+  skos:prefLabel "B-Cell Receptor Complex Profile";
+  skos:altLabel "B Cell Receptor Complex Profile", "BCR Profile", "B-Cell Receptor Repertoire",
+    "BCR Repertoire", "B-Cell Antigen Receptor Complex Profile", "B Cell Receptor Profile",
+    "B-Cell Receptor Profile", "B Cell Receptor Repertoire";
+  skos:related "C4329383", "C129658" .
+
+<http://ontology.roche.com/2024aa-NCIC129761> skos:broader <http://ontology.roche.com/2024aa-NCIC97139>;
+  skos:prefLabel "RAS Family Transcriptional Profile";
+  skos:altLabel "RAS Transcriptional Profile";
+  skos:related "C4331206", "C129761" .
+
+<http://ontology.roche.com/2024aa-NCIC147085> skos:broader <http://ontology.roche.com/2024aa-NCIC97139>;
+  skos:prefLabel "Antigen-Presentation Machinery Expression Profile";
+  skos:altLabel "Antigen-Presentation Machinery Molecules Expression Profile", "APM Expression Profile";
+  skos:related "C147085", "C4687689" .
+
+<http://ontology.roche.com/2024aa-NCIC19587> skos:broader <http://ontology.roche.com/2024aa-NCIC97139>;
+  skos:prefLabel "Antibody Repertoire";
+  skos:altLabel "Antibody Profile";
+  skos:related "C1516006", "C19587" .
+
+<http://ontology.roche.com/2024aa-NCIC129657> skos:broader <http://ontology.roche.com/2024aa-NCIC97139>;
+  skos:prefLabel "T-Cell Receptor Profile";
+  skos:altLabel "T Cell Receptor Repertoire", "T Cell Receptor Profile", "T-Cell Receptor Repertoire",
+    "TCR", "T Cell Receptor Clone Assessment";
+  skos:related "C129657", "C4321509" .
+
+<http://ontology.roche.com/2024aa-NCIC107137> skos:broader <http://ontology.roche.com/2024aa-NCIC97139>;
+  skos:prefLabel "Kinome Response Profile";
+  skos:altLabel "Kinome Response Signature";
+  skos:related "C3829377", "C107137" .
+
+<http://ontology.roche.com/2024aa-NCIC16622> skos:broader <http://ontology.roche.com/2024aa-NCIC68753>;
+  skos:prefLabel "Genetic Marker";
+  skos:altLabel "Marker, Genetic", "Markers, Genetic";
+  skos:definition "A segment of DNA with an identifiable physical location on a chromosome and whose inheritance can be followed. (Source: UMLS/NCI)";
+  skos:related "C16622", "C0017393" .
+
+<http://ontology.roche.com/2024aa-NCIC150128> skos:broader <http://ontology.roche.com/2024aa-NCIC68753>,
+    <http://ontology.roche.com/2024aa-NCIC17220>;
+  skos:prefLabel "Tumor Mutation Burden";
+  skos:altLabel "Tumor Mutational Burden";
+  skos:related "C150128", "C4725627" .
+
+<http://ontology.roche.com/2024aa-NCIC170561> skos:broader <http://ontology.roche.com/2024aa-NCIC25212>;
+  skos:prefLabel "Composite Endpoint";
+  skos:related "C170561", "C5418619" .
+
+<http://ontology.roche.com/2024aa-NCIC94496> skos:broader <http://ontology.roche.com/2024aa-NCIC25212>;
+  skos:prefLabel "Primary Endpoint";
+  skos:related "C94496", "C2986535" .
+
+<http://ontology.roche.com/2024aa-NCIC170560> skos:broader <http://ontology.roche.com/2024aa-NCIC25212>;
+  skos:prefLabel "Direct Endpoint";
+  skos:related "C170560", "C5418618" .
+
+<http://ontology.roche.com/2024aa-NCIC68772> skos:broader <http://ontology.roche.com/2024aa-NCIC25212>;
+  skos:prefLabel "Surrogate Endpoint";
+  skos:altLabel "End Points, Surrogate", "Surrogate End Point", "Endpoint, Surrogate",
+    "Surrogate End Points", "End Point, Surrogate", "Endpoints, Surrogate";
+  skos:related "C68772", "C0162488" .
+
+<http://ontology.roche.com/2024aa-NCIC68771> skos:broader <http://ontology.roche.com/2024aa-NCIC25212>;
+  skos:prefLabel "Clinical Endpoint";
+  skos:related "C68771", "C2347784" .
+
+<http://ontology.roche.com/2024aa-NCIC170559> skos:broader <http://ontology.roche.com/2024aa-NCIC25212>;
+  skos:prefLabel "Exploratory Endpoint";
+  skos:related "C170559", "C5418617" .
+
+<http://ontology.roche.com/2024aa-NCIC139173> skos:broader <http://ontology.roche.com/2024aa-NCIC25212>;
+  skos:prefLabel "Secondary Endpoint";
+  skos:related "C139173", "C4528314" .
+
+<http://ontology.roche.com/2024aa-NCIC114480> skos:broader <http://ontology.roche.com/2024aa-NCIC20069>,
+    <http://ontology.roche.com/2024aa-NCIC16622>;
+  skos:prefLabel "Radiosensitivity Index";
+  skos:related "C114480", "C3888141" .
+
+<http://ontology.roche.com/2024aa-NCIC123765> skos:broader <http://ontology.roche.com/2024aa-NCIC20069>;
+  skos:prefLabel "Phosphorylated Epidermal Growth Factor Receptor";
+  skos:altLabel "pEGFR", "p-EGFR", "Phosphorylated EGFR", "Autophosphorylated Epidermal Growth Factor Receptor";
+  skos:related "C123765", "C1655202" .
+
+<http://ontology.roche.com/2024aa-NCIC176686> skos:broader <http://ontology.roche.com/2024aa-NCIC20069>;
+  skos:prefLabel "Crosslinked Multimeric Type III Procollagen Propeptide";
+  skos:altLabel "Crosslinked Type III Procollagen N-Terminal Peptide Multimers", "Crosslinked Type III Procollagen Propeptide Multimers",
+    "Cross-Linked Multimeric PRO-C3", "XM-PRO-C3", "Crosslinked Multimeric Type III Procollagen N-Terminal Peptide",
+    "Cross-Linked Multimeric Type III Procollagen Propeptide";
+  skos:related "C176686", "C5447375" .
+
+<http://ontology.roche.com/2024aa-NCIC201365> skos:broader <http://ontology.roche.com/2024aa-NCIC201303>;
+  skos:prefLabel "Pharmacodynamic Biomarker";
+  skos:related "C5856755", "C201365" .
+
+<http://ontology.roche.com/2024aa-NCIC201366> skos:broader <http://ontology.roche.com/2024aa-NCIC201303>;
+  skos:prefLabel "Surrogate Endpoint Biomarker";
+  skos:related "C5856756", "C201366" .
+
+<http://ontology.roche.com/2024aa-NCIC189914> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Phosphorylated Proline-Rich AKT1 Substrate 1";
+  skos:altLabel "p-PRAS40", "Phospho-Proline-Rich AKT1 Substrate 1", "Phospho-pAKT1S1",
+    "pAKT1S1", "pPRAS40", "Phospho-PRAS40";
+  skos:related "C189914", "C5708830" .
+
+<http://ontology.roche.com/2024aa-NCIC129645> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Phosphorylated Histone H2AX";
+  skos:altLabel "Phospho-H2AX", "Gamma-H2AX", "Phosphorylated Histone H2a/x", "Phosphorylated Histone H2A.X",
+    "Phosphorylated-H2A.X", "Phosphorylated-H2a/x", "Gamma H2AX";
+  skos:related "C4331007", "C129645" .
+
+<http://ontology.roche.com/2024aa-NCIC129884> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "NNK Metabolite";
+  skos:altLabel "Nicotine-Derived Nitrosamine Ketone Metabolite", "4-Methylnitrosamino-1,3-Pyridyl-1-Butanone Metabolite";
+  skos:related "C4330735", "C129884" .
+
+<http://ontology.roche.com/2024aa-NCIC106312> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Advanced Glycation End Product";
+  skos:altLabel "Advanced Glycation Endproducts", "AGEs", "Glycotoxins", "Glycation Endproducts, Advanced",
+    "Advanced Glycosylation End Products", "Glycation Endproduct, Advanced", "Advanced Glycation End Products",
+    "Advanced Glycation End-Product", "AGE", "Advanced Glycosylation End Product", "Advanced Glycation Endproduct";
+  skos:related "C0162574", "C106312" .
+
+<http://ontology.roche.com/2024aa-NCIC120024> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Histone H3 Methyl Lys4";
+  skos:altLabel "H3K4me1", "Histone H3 Methyl Lysine 4";
+  skos:related "C3896986", "C120024" .
+
+<http://ontology.roche.com/2024aa-NCIC107429> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Histone H3 Lysine 9";
+  skos:altLabel "Lysine 9 of Histone H3", "H3K9", "Histone H3 Lys9";
+  skos:related "C107429", "C3829684" .
+
+<http://ontology.roche.com/2024aa-NCIC120484> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Oxylipin Metabolomic Profile";
+  skos:altLabel "Oxylipin Metabolome";
+  skos:related "C120484", "C4054282" .
+
+<http://ontology.roche.com/2024aa-NCIC182133> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Y593-Phosphorylated DDX5";
+  skos:altLabel "Y593 Phosphorylated-p68 RNA Helicase", "Y593-Phosphorylated Probable ATP-Dependent RNA Helicase DDX5",
+    "pY593-DDX5", "Y593-Phosphorylated p68", "pY593-p68";
+  skos:related "C182133", "C5667326" .
+
+<http://ontology.roche.com/2024aa-NCIC107427> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Histone H3 Lysine 4";
+  skos:altLabel "H3K4", "Histone H3 Lys4", "Lysine 4 of Histone H3";
+  skos:related "C3829685", "C107427" .
+
+<http://ontology.roche.com/2024aa-NCIC116018> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Histone H3 Lysine 28";
+  skos:altLabel "H3K27", "Histone H3 Lys27", "H3K28", "Histone H3 Lys28", "Lysine 27 of Histone H3",
+    "Histone H3 Lysine 27", "Lysine 28 of Histone H3";
+  skos:related "C116018", "C3898881" .
+
+<http://ontology.roche.com/2024aa-NCIC189913> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Phosphorylated RAC Serine/Threonine Kinase Family Protein";
+  skos:altLabel "Phospho-RAC Serine/Threonine Kinase", "Phospho-Protein Kinase-B", "Phosphorylated RAC Serine/Threonine Kinase",
+    "Phospho-RAC-PK", "Phospho-AKT", "Phospho-PKB", "Phospho-Protein Kinase B", "pAKT";
+  skos:related "C5708829", "C189913" .
+
+<http://ontology.roche.com/2024aa-NCIC129896> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Prostaglandin E2 Metabolite";
+  skos:altLabel "PGE2 Metabolite", "Prostaglandin E Metabolite", "PGE Metabolite", "PGE2-M",
+    "PGE-M";
+  skos:related "C129896", "C4321441" .
+
+<http://ontology.roche.com/2024aa-NCIC142872> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Histone H3 Trimethyl Lys36";
+  skos:altLabel "Histone H3 Trimethyl Lysine 36", "H3K36me3", "Trimethylated Histone H3 at Lysine 36";
+  skos:related "C142872", "C4684882" .
+
+<http://ontology.roche.com/2024aa-NCIC129899> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "LDL-C Oxidation";
+  skos:altLabel "Oxidized LDL Cholesterol";
+  skos:related "C4318458", "C129899" .
+
+<http://ontology.roche.com/2024aa-NCIC118181> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "M65-Antigen";
+  skos:altLabel "M65", "M-65", "M65 Antigen";
+  skos:related "C118181", "C3898560" .
+
+<http://ontology.roche.com/2024aa-NCIC157112> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Acetaminophen-Cysteine Protein Adduct";
+  skos:altLabel "Acetaminophen Protein Adduct", "Paracetamol Protein Adduct", "Acetaminophen-Cysteine",
+    "Paracetamol-Cysteine";
+  skos:related "C4761317", "C157112" .
+
+<http://ontology.roche.com/2024aa-NCIC120023> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Histone H3 Acetyl Lys28";
+  skos:altLabel "H3K27ac", "Histone H3 Acetyl Lysine 28", "H3K28ac", "Histone H3 Acetyl Lys27";
+  skos:related "C120023", "C3898882" .
+
+<http://ontology.roche.com/2024aa-NCIC85879> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "3H-Thymidine Labeling Index";
+  skos:related "C2828007", "C85879" .
+
+<http://ontology.roche.com/2024aa-NCIC174109> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Histone H3 Trimethyl Lys9";
+  skos:altLabel "Histone H3 Trimethyl Lysine 9", "H3K9me3";
+  skos:related "C174109", "C5420593" .
+
+<http://ontology.roche.com/2024aa-NCIC127142> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "DNA Repair Capacity";
+  skos:related "C4289710", "C127142" .
+
+<http://ontology.roche.com/2024aa-NCIC118474> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Damage-Associated Molecular Pattern Molecule";
+  skos:altLabel "Danger-Associated Molecular Pattern Molecules", "Damage Associated Molecular Pattern",
+    "DAMP", "Alarmin Proteins", "Danger-Associated Molecular Pattern Molecule", "Alarmin",
+    "Danger Associated Molecular Pattern", "Danger-Associated Molecular Pattern", "Damage-Associated Molecular Pattern",
+    "Damage-Associated Molecular Pattern Molecules", "Danger Associated Molecular Pattern Molecules",
+    "Damage Associated Molecular Pattern Molecules";
+  skos:related "C118474", "C3891560" .
+
+<http://ontology.roche.com/2024aa-NCIC177522> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Nicotine Metabolite Ratio";
+  skos:altLabel "NMR";
+  skos:related "C177522", "C5444028" .
+
+<http://ontology.roche.com/2024aa-NCIC126115> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Kinase Inhibitor Sensitivity";
+  skos:related "C4288853", "C126115" .
+
+<http://ontology.roche.com/2024aa-NCIC18599> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Biomarker of Dietary Intake";
+  skos:related "C1511155", "C18599" .
+
+<http://ontology.roche.com/2024aa-NCIC153558> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Phosphorylated-FAK Y397";
+  skos:altLabel "Focal Adhesion Kinase 1 Y397 Phosphorylated", "Phosphorylated-Focal Adhesion Kinase 1 Y397",
+    "Phospho-PTK2 (Y397)", "FAK (Phospho Y397)", "Phospho-FAK (Y397)", "FAK (pY397)",
+    "Phospho-PTK2 (Tyr397)", "FAK (Phospho Tyr397)", "Phosphorylated FAK Y397";
+  skos:related "C4727351", "C153558" .
+
+<http://ontology.roche.com/2024aa-NCIC189912> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Phosphorylated Eukaryotic Translation Initiation Factor 4E-Binding Protein 1";
+  skos:altLabel "p4EBP1", "pEIF4EBP1", "Phospho-eIF4E-Binding Protein 1", "P4EBP1",
+    "Phospho-EIF4EBP1";
+  skos:related "C189912", "C5708828" .
+
+<http://ontology.roche.com/2024aa-NCIC129882> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Catecholamine Metabolite";
+  skos:related "C129882", "C1291743" .
+
+<http://ontology.roche.com/2024aa-NCIC129897> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Prostaglandin I2 Metabolite";
+  skos:altLabel "PGIM", "PGI-M", "Prostacyclin (PGI2)-Metabolite", "Prostacyclin Metabolite",
+    "PGI2-Metabolite", "PGI2-M", "PGI2 Metabolite", "Prostaglandin I Metabolite";
+  skos:related "C129897", "C4319954" .
+
+<http://ontology.roche.com/2024aa-NCIC153382> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Phosphorylated EIF4E";
+  skos:altLabel "Phosphorylated Eukaryotic Initiation Factor 4E", "Phospho-EIF4E";
+  skos:related "C4727212", "C153382" .
+
+<http://ontology.roche.com/2024aa-NCIC107563> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Fibrin Monomer";
+  skos:altLabel "fibrinmonomer", "fibrin monomer complexes", "Soluble Fibrin Monomer";
+  skos:related "C107563", "C0060327" .
+
+<http://ontology.roche.com/2024aa-NCIC107153> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Histone H3 Trimethyl Lys4";
+  skos:altLabel "H3K4me3", "H3K4me3 Antigen", "Histone H3 Trimethyl Lysine 4";
+  skos:related "C107153", "C3829683" .
+
+<http://ontology.roche.com/2024aa-NCIC157132> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Phosphorylated-STAT3 Y705";
+  skos:altLabel "STAT3 pY705", "STAT3 (pY705)", "Phospho-STAT3 Y705", "pY-STAT3", "STAT3 Phosphorylated on Tyr705",
+    "STAT3 (Phospho-Tyr705)", "Phosphorylated-Signal Transducer and Activator of Transcription 3 Y705";
+  skos:related "C157132", "C4763431" .
+
+<http://ontology.roche.com/2024aa-NCIC129900> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "VLDL-C Oxidation";
+  skos:altLabel "Oxidized VLDL Cholesterol";
+  skos:related "C4331490", "C129900" .
+
+<http://ontology.roche.com/2024aa-NCIC190767> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Tyrosine Phosphorylated STAT5";
+  skos:altLabel "Tyrosine Phosphorylated-Signal Transducer and Activator of Transcription 5A/5B",
+    "Phosphotyrosine-STAT5", "Tyrosine Phosphorylated-Signal Transducer and Activator of Transcription 5",
+    "pY-STAT5", "Tyrosine Phosphorylated-STAT5";
+  skos:related "C190767", "C5783918" .
+
+<http://ontology.roche.com/2024aa-NCIC190766> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Phosphorylated-STAT1 Y701";
+  skos:altLabel "STAT1 Phosphorylated on Tyr701", "Phospho-STAT1 Y701", "Phosphorylated-Signal Transducer and Activator of Transcription 1 Y701",
+    "STAT1 (pY701)", "STAT1 pY701", "STAT1 (Phospho-Tyr701)", "Tyrosine Phosphorylated STAT1",
+    "pY-STAT1", "Phosphorylated-Signal Transducer and Activator of Transcription 1-Alpha/Beta Y701";
+  skos:related "C5783917", "C190766" .
+
+<http://ontology.roche.com/2024aa-NCIC107151> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Histone H3 Dimethyl Lys28";
+  skos:altLabel "Histone H3 Dimethyl Lysine 28", "H3K28me2", "H3K27me2", "H3K27me2 Antigen",
+    "Histone H3 Dimethyl Lys27";
+  skos:related "C107151", "C3829687" .
+
+<http://ontology.roche.com/2024aa-NCIC156388> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Histone H3 Lysine 79";
+  skos:altLabel "Lysine 79 of Histone H3", "H3K79", "Histone H3 Lys79";
+  skos:related "C4744788", "C156388" .
+
+<http://ontology.roche.com/2024aa-NCIC129883> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Choline Metabolite";
+  skos:related "C4329663", "C129883" .
+
+<http://ontology.roche.com/2024aa-NCIC189911> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Phosphorylated 40S Ribosomal Protein S6";
+  skos:altLabel "Phospho-40S Ribosomal Protein S6", "Phospho-RPS6", "pS6RP", "pRPS6",
+    "Phospho-Small Ribosomal Subunit Protein eS6";
+  skos:related "C189911", "C5708827" .
+
+<http://ontology.roche.com/2024aa-NCIC113515> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Bone Specific Alkaline Phosphatase";
+  skos:altLabel "BSAP", "Bone Alkaline Phosphatase", "Bone-Specific Alkaline Phosphatase",
+    "BAP", "bALP";
+  skos:related "C0312399", "C113515" .
+
+<http://ontology.roche.com/2024aa-NCIC107152> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Histone H3 Dimethyl Lys4";
+  skos:altLabel "Histone H3 Dimethyl Lysine 4", "H3K4me2", "H3K4me2 Antigen";
+  skos:related "C3829686", "C107152" .
+
+<http://ontology.roche.com/2024aa-NCIC174110> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Histone H3 Trimethyl Lys28";
+  skos:altLabel "Histone H3 Trimethyl Lysine 28", "H3K28me3", "H3K27me3";
+  skos:related "C5420594", "C174110" .
+
+<http://ontology.roche.com/2024aa-NCIC105825> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Protein Carbonyl Content";
+  skos:altLabel "Protein Carbonyl Level", "Protein Carbonyl Group";
+  skos:related "C3828461", "C105825" .
+
+<http://ontology.roche.com/2024aa-NCIC121532> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Urine Albumin";
+  skos:altLabel "Urinary Albumin";
+  skos:related "C2362049", "C121532" .
+
+<http://ontology.roche.com/2024aa-NCIC129885> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Tryptophan Metabolite";
+  skos:related "C4331440", "C129885" .
+
+<http://ontology.roche.com/2024aa-NCIC118482> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "MINT31";
+  skos:altLabel "MINT-31";
+  skos:related "C118482", "C3898549" .
+
+<http://ontology.roche.com/2024aa-NCIC141264> skos:broader <http://ontology.roche.com/2024aa-NCIC18520>;
+  skos:prefLabel "Phosphorylated Proto-Oncogene Tyrosine-Protein Kinase Src";
+  skos:altLabel "Phospho-Proto-Oncogene Tyrosine-Protein Kinase Src", "Phosphorylated SRC",
+    "Phospho-Src";
+  skos:related "C4683669", "C141264" .
+
+<http://ontology.roche.com/2024aa-NCIC107486> skos:broader <http://ontology.roche.com/2024aa-NCIC18493>;
+  skos:prefLabel "Tumor Microenvironment of Metastasis Density";
+  skos:altLabel "TMEM Score", "Tumor Microenvironment of Metastasis Score", "TMEM Density";
+  skos:related "C3827753", "C107486" .
+
+<http://ontology.roche.com/2024aa-NCIC68764> skos:broader <http://ontology.roche.com/2024aa-NCIC68763>;
+  skos:prefLabel "Known Valid Biomarker";
+  skos:related "C68764", "C2346621" .
+
+<http://ontology.roche.com/2024aa-NCIC68765> skos:broader <http://ontology.roche.com/2024aa-NCIC68763>;
+  skos:prefLabel "Probable Valid Biomarker";
+  skos:related "C2347686", "C68765" .
+
+<http://ontology.roche.com/2024aa-NCIC128469> skos:broader <http://ontology.roche.com/2024aa-NCIC48181>;
+  skos:prefLabel "Glycan Profile";
+  skos:altLabel "Glycan Analysis", "Glycan Characterization";
+  skos:related "C4283840", "C128469" .
+
+<http://ontology.roche.com/2024aa-NCIC126118> skos:broader <http://ontology.roche.com/2024aa-NCIC48181>;
+  skos:prefLabel "HLA-Cw Serotype";
+  skos:altLabel "HLA-Cw";
+  skos:related "C126118", "C4284578" .
+
+<http://ontology.roche.com/2024aa-NCIC48182> skos:broader <http://ontology.roche.com/2024aa-NCIC48181>;
+  skos:prefLabel "Gene Signature";
+  skos:related "C1708225", "C48182" .
+
+<http://ontology.roche.com/2024aa-NCIC19966> skos:broader <http://ontology.roche.com/2024aa-NCIC48181>;
+  skos:prefLabel "Molecular Fingerprint of Tumor";
+  skos:altLabel "Signatures of Cancer Cells", "Molecular Profiles of Cancer Cells";
+  skos:related "C19966", "C1513392" .
+
+<http://ontology.roche.com/2024aa-NCIC155656> skos:broader <http://ontology.roche.com/2024aa-NCIC48181>;
+  skos:prefLabel "Diagnostic DNA Methylation Signature";
+  skos:related "C155656", "C4723958" .
+
+<http://ontology.roche.com/2024aa-NCIC168895> skos:broader <http://ontology.roche.com/2024aa-NCIC48181>;
+  skos:prefLabel "Measurable Residual Disease Molecular Marker";
+  skos:altLabel "Minimal Residual Disease Signature", "MRD Molecular Marker", "MRD Signature",
+    "MRD Marker", "Minimal Residual Disease Molecular Marker";
+  skos:related "C168895", "C5239209" .
+
+<http://ontology.roche.com/2024aa-NCIC116968> skos:broader <http://ontology.roche.com/2024aa-NCIC82987>;
+  skos:prefLabel "FOXP3 Treg-Specific Demethylated Region";
+  skos:altLabel "FOXP3 TSDR", "FOXP3 Treg Specific Demethylated Region";
+  skos:related "C116968", "C3899163" .
+
+<http://ontology.roche.com/2024aa-NCIC118848> skos:broader <http://ontology.roche.com/2024aa-NCIC82987>;
+  skos:prefLabel "Tumor Antigen-reactive CD28+/CCR7+/CD27+/CD45RA- Cytotoxic T-lymphocyte";
+  skos:altLabel "Rapidly Expanding High-Avidity Cytotoxic T-Lymphocyte", "Rapidly Expanding High-Avidity Cytotoxic T-Cell",
+    "Rapidly Expanding High-Avidity Cytotoxic T Lymphocyte", "Rapidly Expanding High-Avidity Cytotoxic T Cell";
+  skos:related "C118848", "C3896612" .
+
+<http://ontology.roche.com/2024aa-NCIC17220> skos:broader <http://ontology.roche.com/2024aa-NCIC18329>;
+  skos:prefLabel "Tumor Marker";
+  skos:altLabel "Cancer Biomarker", "Markers, Tumor", "Biomarker, Cancer", "Marker, Tumor",
+    "Biomarkers, Cancer", "Cancer Biomarkers";
+  skos:related "C17220", "C0041365" .
+
+<http://ontology.roche.com/2024aa-NCIC20205> skos:broader <http://ontology.roche.com/2024aa-NCIC18329>;
+  skos:prefLabel "Marker of Preneoplastic Change";
+  skos:related "C1512999", "C20205" .
+
+<http://ontology.roche.com/2024aa-NCIC129894> skos:broader <http://ontology.roche.com/2024aa-NCIC129886>;
+  skos:prefLabel "Chemokine Expression Profile";
+  skos:altLabel "Chemokine Profile";
+  skos:related "C4329658", "C129894" .
+
+<http://ontology.roche.com/2024aa-NCIC129770> skos:broader <http://ontology.roche.com/2024aa-NCIC129758>;
+  skos:prefLabel "Total Phosphotyrosine";
+  skos:altLabel "Total pY", "Total p-Tyr";
+  skos:related "C4331421", "C129770" .
+
+<http://ontology.roche.com/2024aa-NCIC93245> skos:broader <http://ontology.roche.com/2024aa-NCIC16622>;
+  skos:prefLabel "Genetic Marker of Susceptibility";
+  skos:related "C93245", "C2985514" .
+
+<http://ontology.roche.com/2024aa-NCIC17396> skos:broader <http://ontology.roche.com/2024aa-NCIC16622>;
+  skos:prefLabel "Sequence Tagged Site";
+  skos:altLabel "Tagged Site, Sequence", "Sites, Sequence-Tagged", "STS", "Sites, Sequence Tagged",
+    "Site, Sequence-Tagged", "Tagged Sites, Sequence", "Sequence-Tagged Site", "Sequence-Tagged Sites",
+    "Site, Sequence Tagged";
+  skos:related "C0080145", "C17396" .
+
+<http://ontology.roche.com/2024aa-NCIC18299> skos:broader <http://ontology.roche.com/2024aa-NCIC16622>;
+  skos:prefLabel "Polymorphic Microsatellite Marker";
+  skos:related "C0796346", "C18299" .
+
+<http://ontology.roche.com/2024aa-NCIC129891> skos:broader <http://ontology.roche.com/2024aa-NCIC48182>;
+  skos:prefLabel "DDRD Signature";
+  skos:altLabel "DNA Damage Response Deficiency Gene Signature", "DDRD Gene Signature",
+    "DNA Damage Response Deficiency Signature";
+  skos:related "C4329695", "C129891" .
+
+<http://ontology.roche.com/2024aa-NCIC121989> skos:broader <http://ontology.roche.com/2024aa-NCIC48182>;
+  skos:prefLabel "BROCA Gene Signature";
+  skos:altLabel "BROCA - Cancer Risk Panel";
+  skos:related "C121989", "C4055392" .
+
+<http://ontology.roche.com/2024aa-NCIC148072> skos:broader <http://ontology.roche.com/2024aa-NCIC48182>;
+  skos:prefLabel "Low Density Array Gene Signature";
+  skos:altLabel "Low-Density Array Gene Signature", "LDA Gene Signature";
+  skos:related "C148072", "C4688350" .
+
+<http://ontology.roche.com/2024aa-NCIC190207> skos:broader <http://ontology.roche.com/2024aa-NCIC48182>;
+  skos:prefLabel "MHCII Immune Activation Score";
+  skos:related "C190207", "C5783566" .
+
+<http://ontology.roche.com/2024aa-NCIC121996> skos:broader <http://ontology.roche.com/2024aa-NCIC48182>;
+  skos:prefLabel "BASE47 Gene Signature";
+  skos:altLabel "Bladder Cancer Analysis of Subtypes by Expression 47", "BASE47 Gene Set";
+  skos:related "C4055403", "C121996" .
+
+<http://ontology.roche.com/2024aa-NCIC129769> skos:broader <http://ontology.roche.com/2024aa-NCIC48182>;
+  skos:prefLabel "TGF-Beta Responsive Gene Signature";
+  skos:altLabel "Transforming Growth Factor Beta Responsive Gene Signature", "TGF-Beta Responsive Signature";
+  skos:related "C129769", "C4331371" .
+
+<http://ontology.roche.com/2024aa-NCIC120016> skos:broader <http://ontology.roche.com/2024aa-NCIC48182>;
+  skos:prefLabel "Lymph Node Gene Expression Signature";
+  skos:related "C120016", "C3898563" .
+
+<http://ontology.roche.com/2024aa-NCIC120494> skos:broader <http://ontology.roche.com/2024aa-NCIC48182>;
+  skos:prefLabel "PAM50 Gene Expression Signature";
+  skos:altLabel "PAM50", "Prediction Analysis of Microarray 50";
+  skos:related "C120494", "C4054276" .
+
+<http://ontology.roche.com/2024aa-NCIC116389> skos:broader <http://ontology.roche.com/2024aa-NCIC48182>;
+  skos:prefLabel "EMC-92-Gene Signature";
+  skos:altLabel "EMC-92", "SKY92 Gene Signature", "EMC-92 Gene Signature", "SKY-92 Gene Signature";
+  skos:related "C3896587", "C116389" .
+
+<http://ontology.roche.com/2024aa-NCIC120485> skos:broader <http://ontology.roche.com/2024aa-NCIC48182>;
+  skos:prefLabel "Androgen Receptor-Dependent Gene Signature";
+  skos:altLabel "AR-Dependent Gene Signature", "AR Gene Signature";
+  skos:related "C120485", "C4055468" .
+
+<http://ontology.roche.com/2024aa-NCIC181329> skos:broader <http://ontology.roche.com/2024aa-NCIC48182>;
+  skos:prefLabel "IFN-1 Gene Signature";
+  skos:related "C5557002", "C181329" .
+
+<http://ontology.roche.com/2024aa-NCIC120018> skos:broader <http://ontology.roche.com/2024aa-NCIC48182>;
+  skos:prefLabel "Tumor Proliferation Gene Expression Signature";
+  skos:related "C3897283", "C120018" .
+
+<http://ontology.roche.com/2024aa-NCIC120019> skos:broader <http://ontology.roche.com/2024aa-NCIC48182>;
+  skos:prefLabel "Germinal Center B-Cell Gene Expression Signature";
+  skos:altLabel "Germinal Center B-Cell-Like Gene Expression Signature", "Germinal Center B Cell-Like Gene Expression Signature",
+    "Germinal Center B Cell Gene Expression Signature";
+  skos:related "C120019", "C3899031" .
+
+<http://ontology.roche.com/2024aa-NCIC128278> skos:broader <http://ontology.roche.com/2024aa-NCIC48182>;
+  skos:prefLabel "Interferon-Related DNA Damage Resistance Gene Signature";
+  skos:altLabel "IFN-Related DNA Damage Resistance Signature";
+  skos:related "C128278", "C4287658" .
+
+<http://ontology.roche.com/2024aa-NCIC120017> skos:broader <http://ontology.roche.com/2024aa-NCIC48182>;
+  skos:prefLabel "MHC Class II Gene Expression Signature";
+  skos:altLabel "Major Histocompatibility Complex Class II Gene Expression Signature";
+  skos:related "C120017", "C3898551" .
+
+<http://ontology.roche.com/2024aa-NCIC121990> skos:broader <http://ontology.roche.com/2024aa-NCIC48182>;
+  skos:prefLabel "BROCA-HR Gene Signature";
+  skos:altLabel "BROCA-HR Gene Test";
+  skos:related "C121990", "C4055391" .
+
+<http://ontology.roche.com/2024aa-NCIC18396> skos:broader <http://ontology.roche.com/2024aa-NCIC17220>;
+  skos:prefLabel "Metastasis and Aggressiveness Marker";
+  skos:related "C1513179", "C18396" .
+
+<http://ontology.roche.com/2024aa-NCIC128284> skos:broader <http://ontology.roche.com/2024aa-NCIC17220>;
+  skos:prefLabel "Low Molecular Weight Cyclin E";
+  skos:altLabel "Low Molecular Weight Cyclin-E", "LMW-E";
+  skos:related "C4288805", "C128284" .
+
+<http://ontology.roche.com/2024aa-NCIC157523> skos:broader <http://ontology.roche.com/2024aa-NCIC17220>;
+  skos:prefLabel "Tumor Marker Level";
+  skos:related "C157523", "C1318284" .
+
+<http://ontology.roche.com/2024aa-NCIC46091> skos:broader <http://ontology.roche.com/2024aa-NCIC17220>;
+  skos:prefLabel "Melanoma Biomarker";
+  skos:related "C1708977", "C46091" .
+
+<http://ontology.roche.com/2024aa-NCIC18395> skos:broader <http://ontology.roche.com/2024aa-NCIC17220>;
+  skos:prefLabel "Proliferation Marker";
+  skos:related "C1514486", "C18395" .
+
+<http://ontology.roche.com/2024aa-NCIC18155> skos:broader <http://ontology.roche.com/2024aa-NCIC17396>;
+  skos:prefLabel "Expressed Sequence Tag";
+  skos:altLabel "Tag, Expressed Sequence", "Sequence Tag, Expressed", "Sequence Tags, Expressed",
+    "Tags, Expressed Sequence", "EST", "ESTs";
+  skos:related "C0600510", "C18155" .
