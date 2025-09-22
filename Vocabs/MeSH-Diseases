@@ -1,0 +1,75 @@
+@prefix ns1: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ns2: <http://purl.org/dc/terms/> .
+
+<http://id.nlm.nih.gov/mesh/D002289> a ns1:Concept ;
+    ns2:contributor "admin" ;
+    ns2:creator "admin" ;
+    ns1:broader <http://id.nlm.nih.gov/mesh/D009369>,
+        <https://beo/Disease/3> ;
+    ns1:definition "A malignant epithelial neoplasm of the lung that is not small cell carcinoma."@en,
+        "A subtype of non-small cell lung cancer characterized by squamous cell morphology."@en ;
+    ns1:exactMatch <http://id.nlm.nih.gov/mesh/D002289> ;
+    ns1:prefLabel "Non-small cell lung cancer",
+        "Non-small cell squamous lung carcinoma" ;
+    ns1:topConceptOf <https://vocabularies.com/mesh-diseases/0.4> .
+
+<http://id.nlm.nih.gov/mesh/D018277> a ns1:Concept ;
+    ns2:contributor "admin" ;
+    ns2:creator "admin" ;
+    ns1:broader <http://id.nlm.nih.gov/mesh/D018276> ;
+    ns1:definition "A malignant epithelial neoplasm composed of mucous and epidermoid cells."@en ;
+    ns1:exactMatch <http://id.nlm.nih.gov/mesh/D018277> ;
+    ns1:prefLabel "Lung mucoepidermoid carcinoma" ;
+    ns1:topConceptOf <https://vocabularies.com/mesh-diseases/0.4> .
+
+<https://vocabularies.com/mesh-diseases/0.6> a ns1:ConceptScheme ;
+    ns1:hasTopConcept <http://id.nlm.nih.gov/mesh/D009671> ;
+    ns1:prefLabel "MeSH Diseases — Neoplasms Only"@en .
+
+<http://id.nlm.nih.gov/mesh/D008728> a ns1:Concept ;
+    ns1:broader <http://id.nlm.nih.gov/mesh/D009671> ;
+    ns1:definition "Neoplasms of the respiratory tract, including the lung, trachea, bronchi, larynx, pharynx, and nasal cavity."@en ;
+    ns1:prefLabel "Respiratory Tract Neoplasms"@en ;
+    ns1:topConceptOf <https://vocabularies.com/mesh-diseases/0.4> .
+
+<http://id.nlm.nih.gov/mesh/D018273> a ns1:Concept ;
+    ns1:broader <http://id.nlm.nih.gov/mesh/D009671> ;
+    ns1:definition "A malignant neoplasm made up of epithelial cells tending to infiltrate surrounding tissues and give rise to metastases."@en ;
+    ns1:prefLabel "Carcinoma"@en ;
+    ns1:topConceptOf <https://vocabularies.com/mesh-diseases/0.4> .
+
+<http://id.nlm.nih.gov/mesh/D018276> a ns1:Concept ;
+    ns1:broader <http://id.nlm.nih.gov/mesh/D018273> ;
+    ns1:definition "A malignant epithelial tumor containing both mucous and epidermoid cells."@en ;
+    ns1:prefLabel "Mucoepidermoid Carcinoma"@en ;
+    ns1:topConceptOf <https://vocabularies.com/mesh-diseases/0.4> .
+
+<http://id.nlm.nih.gov/mesh/D009369> a ns1:Concept ;
+    ns2:contributor "admin" ;
+    ns2:creator "admin" ;
+    ns1:broader <http://id.nlm.nih.gov/mesh/D008728>,
+        <http://id.nlm.nih.gov/mesh/D009671> ;
+    ns1:definition "A tumor composed of solid tissue, excluding liquid tumors such as leukemias."@en,
+        "Neoplasm of the lung or its bronchus."@en ;
+    ns1:exactMatch <http://id.nlm.nih.gov/mesh/D009369> ;
+    ns1:prefLabel "Lung Carcinoma",
+        "Solid tumors",
+        "Lung Neoplasms"@en ;
+    ns1:topConceptOf <https://vocabularies.com/mesh-diseases/0.4> .
+
+<http://id.nlm.nih.gov/mesh/D009671> a ns1:Concept ;
+    ns1:definition "New abnormal growth of tissue that may be benign or malignant."@en ;
+    ns1:prefLabel "Neoplasms"@en ;
+    ns1:topConceptOf <https://vocabularies.com/mesh-diseases/0.4>,
+        <https://vocabularies.com/mesh-diseases/0.6> .
+
+<https://vocabularies.com/mesh-diseases/0.4> ns1:hasTopConcept <http://id.nlm.nih.gov/mesh/D008728>,
+        <http://id.nlm.nih.gov/mesh/D009369>,
+        <http://id.nlm.nih.gov/mesh/D009671>,
+        <http://id.nlm.nih.gov/mesh/D018273>,
+        <http://id.nlm.nih.gov/mesh/D018276>,
+        <https://beo/Disease/1>,
+        <https://beo/Disease/2>,
+        <https://beo/Disease/3>,
+        <https://beo/Disease/5> .
+
