@@ -5,4 +5,4 @@ HydrAID combines a Knowledge Graph (RDF/SPARQL + SHACL) and neuro-symbolic RAG t
 ## Portfolio
 
 This project is part of my professional portfolio:
-🔗 https://github.com/olikamin11-dev/Oliver-Kaminsi-Portfolio/blob/main/README.md
+🔗 https://github.com/olikamin11-dev/Oliver-Kaminsi-Portfolio
