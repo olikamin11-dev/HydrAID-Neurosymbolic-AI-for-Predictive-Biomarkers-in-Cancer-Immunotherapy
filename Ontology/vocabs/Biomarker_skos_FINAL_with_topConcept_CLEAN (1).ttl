@@ -1,0 +1,830 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+
+<http://ontology.roche.com/2024aa-NCIC16342> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Biomarker"@en;
+  skos:topConceptOf <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:altLabel "Biologic Markers", "Markers, Biological", "Molecular Marker", "Biological Marker",
+    "Marker, Biological", "Biologic Marker", "Biomarkers", "Signature Molecule", "Markers, Biologic",
+    "Marker, Biologic" .
+
+<http://ontology.roche.com/2024aa-NCIC97139> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Proteomic Profile"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16342> .
+
+<http://ontology.roche.com/2024aa-NCIC68753> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Genomic Biomarker"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16342> .
+
+<http://ontology.roche.com/2024aa-NCIC201364> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Predictive Biomarker"@en;
+  skos:altLabel "Exposure Predictive Biomarker";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16342> .
+
+<http://ontology.roche.com/2024aa-NCIC25212> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "End Point"@en;
+  skos:altLabel "Endpoint", "End-Point";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16342> .
+
+<http://ontology.roche.com/2024aa-NCIC192188> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "HLA Class I Panel Reactive Antibody"@en;
+  skos:altLabel "MHC Class I Panel Reactive Antibody", "Human Leukocyte Antigen Class I Panel Reactive Antibody",
+    "HLA Class I PRA", "Class I PRA", "Major Histocompatibility Complex Class I Panel Reactive Antibody";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16342> .
+
+<http://ontology.roche.com/2024aa-NCIC104680> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Ancestry-Informative Marker"@en;
+  skos:altLabel "Ancestry Informative Marker", "AIM";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16342> .
+
+<http://ontology.roche.com/2024aa-NCIC20069> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Prognostic Marker"@en;
+  skos:altLabel "Molecular Marker of Prognosis", "Prognosis Marker";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16342> .
+
+<http://ontology.roche.com/2024aa-NCIC78347> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Cluster of Differentiation"@en;
+  skos:altLabel "CD Antigen", "Cluster of Designation", "Classification Determinant",
+    "Cluster of Differentiation Antigens", "Differentiation Antigen";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16342> .
+
+<http://ontology.roche.com/2024aa-NCIC201303> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Response Biomarker"@en;
+  skos:altLabel "Exposure Response Biomarker";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16342> .
+
+<http://ontology.roche.com/2024aa-NCIC18520> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Metabolic Marker"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16342> .
+
+<http://ontology.roche.com/2024aa-NCIC114790> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Apoptosis Marker"@en;
+  skos:altLabel "Marker of Apoptosis", "Apoptosis Biomarker";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16342> .
+
+<http://ontology.roche.com/2024aa-NCIC18493> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Risk Marker"@en;
+  skos:altLabel "Markers, Risk";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16342> .
+
+<http://ontology.roche.com/2024aa-NCIC68763> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Valid Biomarker"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16342> .
+
+<http://ontology.roche.com/2024aa-NCIC142724> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Surrogate Marker"@en;
+  skos:altLabel "Marker, Surrogate", "Markers, Surrogate";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16342> .
+
+<http://ontology.roche.com/2024aa-NCIC48181> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Molecular Signature"@en;
+  skos:definition "A set of molecular characteristics (genes, proteins, etc.) that define a specific biological state or disease.";
+  skos:altLabel "Molecular Profile", "Molecular Fingerprint";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16342> .
+
+<http://ontology.roche.com/2024aa-NCIC201367> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Safety Biomarker"@en;
+  skos:altLabel "Exposure Safety Biomarker";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16342> .
+
+<http://ontology.roche.com/2024aa-NCIC201363> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Prognostic Biomarker"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16342> .
+
+<http://ontology.roche.com/2024aa-NCIC143955> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Blood Inflammatory Marker"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16342> .
+
+<http://ontology.roche.com/2024aa-NCIC82987> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "T-Cell Marker"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16342> .
+
+<http://ontology.roche.com/2024aa-NCIC201361> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Diagnostic Biomarker"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16342> .
+
+<http://ontology.roche.com/2024aa-NCIC124262> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Flow-Mediated Vasodilation"@en;
+  skos:altLabel "Flow-Mediated Vascular Reactivity";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16342> .
+
+<http://ontology.roche.com/2024aa-NCIC18329> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Disease Marker"@en;
+  skos:altLabel "Markers, Disease", "Marker, Disease";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16342> .
+
+<http://ontology.roche.com/2024aa-NCIC201362> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Monitoring Biomarker"@en;
+  skos:altLabel "Exposure Monitoring Biomarker";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16342> .
+
+<http://ontology.roche.com/2024aa-NCIC201360> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Susceptibility Biomarker"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16342> .
+
+<http://ontology.roche.com/2024aa-NCIC129886> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Cytokine Expression Profile"@en;
+  skos:altLabel "Cytokine Profile";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC97139> .
+
+<http://ontology.roche.com/2024aa-NCIC129758> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Phosphoprotein Profile"@en;
+  skos:altLabel "Phospho-Protein Profile";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC97139> .
+
+<http://ontology.roche.com/2024aa-NCIC129658> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "B-Cell Receptor Complex Profile"@en;
+  skos:altLabel "B Cell Receptor Complex Profile", "BCR Profile", "B-Cell Receptor Repertoire",
+    "BCR Repertoire", "B-Cell Antigen Receptor Complex Profile", "B Cell Receptor Profile",
+    "B-Cell Receptor Profile", "B Cell Receptor Repertoire";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC97139> .
+
+<http://ontology.roche.com/2024aa-NCIC129761> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "RAS Family Transcriptional Profile"@en;
+  skos:altLabel "RAS Transcriptional Profile";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC97139> .
+
+<http://ontology.roche.com/2024aa-NCIC147085> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Antigen-Presentation Machinery Expression Profile"@en;
+  skos:altLabel "Antigen-Presentation Machinery Molecules Expression Profile", "APM Expression Profile";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC97139> .
+
+<http://ontology.roche.com/2024aa-NCIC19587> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Antibody Repertoire"@en;
+  skos:altLabel "Antibody Profile";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC97139> .
+
+<http://ontology.roche.com/2024aa-NCIC129657> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "T-Cell Receptor Profile"@en;
+  skos:definition "The diversity and composition of T-cell receptors in a sample, reflecting immune repertoire.";
+  skos:altLabel "TCR", "T Cell Receptor Repertoire", "T Cell Receptor Profile", "T-Cell Receptor Repertoire",
+    "T Cell Receptor Clone Assessment";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC97139> .
+
+<http://ontology.roche.com/2024aa-NCIC107137> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Kinome Response Profile"@en;
+  skos:altLabel "Kinome Response Signature";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC97139> .
+
+<http://ontology.roche.com/2024aa-NCIC16622> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Genetic Marker"@en;
+  skos:definition "A segment of DNA with an identifiable physical location on a chromosome and whose inheritance can be followed. (Source: UMLS/NCI)";
+  skos:altLabel "Marker, Genetic", "Markers, Genetic";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC68753> .
+
+<http://ontology.roche.com/2024aa-NCIC150128> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Tumor Mutation Burden"@en;
+  skos:definition "The number of mutations per megabase of coding DNA in a tumor genome, used as a biomarker for immunotherapy response.";
+  skos:altLabel "Tumor Mutational Burden";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC68753>, <http://ontology.roche.com/2024aa-NCIC17220> .
+
+<http://ontology.roche.com/2024aa-NCIC170561> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Composite Endpoint"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC25212> .
+
+<http://ontology.roche.com/2024aa-NCIC94496> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Primary Endpoint"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC25212> .
+
+<http://ontology.roche.com/2024aa-NCIC170560> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Direct Endpoint"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC25212> .
+
+<http://ontology.roche.com/2024aa-NCIC68772> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Surrogate Endpoint"@en;
+  skos:altLabel "End Points, Surrogate", "Surrogate End Point", "Endpoint, Surrogate",
+    "Surrogate End Points", "End Point, Surrogate", "Endpoints, Surrogate";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC25212> .
+
+<http://ontology.roche.com/2024aa-NCIC68771> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Clinical Endpoint"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC25212> .
+
+<http://ontology.roche.com/2024aa-NCIC170559> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Exploratory Endpoint"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC25212> .
+
+<http://ontology.roche.com/2024aa-NCIC139173> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Secondary Endpoint"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC25212> .
+
+<http://ontology.roche.com/2024aa-NCIC114480> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Radiosensitivity Index"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC20069>, <http://ontology.roche.com/2024aa-NCIC16622> .
+
+<http://ontology.roche.com/2024aa-NCIC123765> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Phosphorylated Epidermal Growth Factor Receptor"@en;
+  skos:altLabel "pEGFR", "p-EGFR", "Phosphorylated EGFR", "Autophosphorylated Epidermal Growth Factor Receptor";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC20069> .
+
+<http://ontology.roche.com/2024aa-NCIC176686> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Crosslinked Multimeric Type III Procollagen Propeptide"@en;
+  skos:altLabel "Crosslinked Type III Procollagen N-Terminal Peptide Multimers", "Crosslinked Type III Procollagen Propeptide Multimers",
+    "Cross-Linked Multimeric PRO-C3", "XM-PRO-C3", "Crosslinked Multimeric Type III Procollagen N-Terminal Peptide",
+    "Cross-Linked Multimeric Type III Procollagen Propeptide";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC20069> .
+
+<http://ontology.roche.com/2024aa-NCIC201365> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Pharmacodynamic Biomarker"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC201303> .
+
+<http://ontology.roche.com/2024aa-NCIC201366> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Surrogate Endpoint Biomarker"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC201303> .
+
+<http://ontology.roche.com/2024aa-NCIC189914> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Phosphorylated Proline-Rich AKT1 Substrate 1"@en;
+  skos:altLabel "p-PRAS40", "Phospho-Proline-Rich AKT1 Substrate 1", "Phospho-pAKT1S1",
+    "pAKT1S1", "pPRAS40", "Phospho-PRAS40";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC129645> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Phosphorylated Histone H2AX"@en;
+  skos:altLabel "Phospho-H2AX", "Gamma-H2AX", "Phosphorylated Histone H2a/x", "Phosphorylated Histone H2A.X",
+    "Phosphorylated-H2A.X", "Phosphorylated-H2a/x", "Gamma H2AX";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC129884> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "NNK Metabolite"@en;
+  skos:altLabel "Nicotine-Derived Nitrosamine Ketone Metabolite", "4-Methylnitrosamino-1,3-Pyridyl-1-Butanone Metabolite";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC106312> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Advanced Glycation End Product"@en;
+  skos:altLabel "Advanced Glycation Endproducts", "AGEs", "Glycotoxins", "Glycation Endproducts, Advanced",
+    "Advanced Glycosylation End Products", "Glycation Endproduct, Advanced", "Advanced Glycation End Products",
+    "Advanced Glycation End-Product", "AGE", "Advanced Glycosylation End Product", "Advanced Glycation Endproduct";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC120024> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Histone H3 Methyl Lys4"@en;
+  skos:altLabel "H3K4me1", "Histone H3 Methyl Lysine 4";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC107429> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Histone H3 Lysine 9"@en;
+  skos:altLabel "Lysine 9 of Histone H3", "H3K9", "Histone H3 Lys9";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC120484> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Oxylipin Metabolomic Profile"@en;
+  skos:altLabel "Oxylipin Metabolome";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC182133> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Y593-Phosphorylated DDX5"@en;
+  skos:altLabel "Y593 Phosphorylated-p68 RNA Helicase", "Y593-Phosphorylated Probable ATP-Dependent RNA Helicase DDX5",
+    "pY593-DDX5", "Y593-Phosphorylated p68", "pY593-p68";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC107427> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Histone H3 Lysine 4"@en;
+  skos:altLabel "H3K4", "Histone H3 Lys4", "Lysine 4 of Histone H3";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC116018> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Histone H3 Lysine 28"@en;
+  skos:altLabel "H3K27", "Histone H3 Lys27", "H3K28", "Histone H3 Lys28", "Lysine 27 of Histone H3",
+    "Histone H3 Lysine 27", "Lysine 28 of Histone H3";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC189913> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Phosphorylated RAC Serine/Threonine Kinase Family Protein"@en;
+  skos:altLabel "Phospho-RAC Serine/Threonine Kinase", "Phospho-Protein Kinase-B", "Phosphorylated RAC Serine/Threonine Kinase",
+    "Phospho-RAC-PK", "Phospho-AKT", "Phospho-PKB", "Phospho-Protein Kinase B", "pAKT";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC129896> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Prostaglandin E2 Metabolite"@en;
+  skos:altLabel "PGE2 Metabolite", "Prostaglandin E Metabolite", "PGE Metabolite", "PGE2-M",
+    "PGE-M";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC142872> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Histone H3 Trimethyl Lys36"@en;
+  skos:altLabel "Histone H3 Trimethyl Lysine 36", "H3K36me3", "Trimethylated Histone H3 at Lysine 36";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC129899> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "LDL-C Oxidation"@en;
+  skos:altLabel "Oxidized LDL Cholesterol";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC118181> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "M65-Antigen"@en;
+  skos:altLabel "M65", "M-65", "M65 Antigen";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC157112> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Acetaminophen-Cysteine Protein Adduct"@en;
+  skos:altLabel "Acetaminophen Protein Adduct", "Paracetamol Protein Adduct", "Acetaminophen-Cysteine",
+    "Paracetamol-Cysteine";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC120023> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Histone H3 Acetyl Lys28"@en;
+  skos:altLabel "H3K27ac", "Histone H3 Acetyl Lysine 28", "H3K28ac", "Histone H3 Acetyl Lys27";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC85879> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "3H-Thymidine Labeling Index"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC174109> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Histone H3 Trimethyl Lys9"@en;
+  skos:altLabel "Histone H3 Trimethyl Lysine 9", "H3K9me3";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC127142> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "DNA Repair Capacity"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC118474> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Damage-Associated Molecular Pattern Molecule"@en;
+  skos:altLabel "Danger-Associated Molecular Pattern Molecules", "Damage Associated Molecular Pattern",
+    "DAMP", "Alarmin Proteins", "Danger-Associated Molecular Pattern Molecule", "Alarmin",
+    "Danger Associated Molecular Pattern", "Danger-Associated Molecular Pattern", "Damage-Associated Molecular Pattern",
+    "Damage-Associated Molecular Pattern Molecules", "Danger Associated Molecular Pattern Molecules",
+    "Damage Associated Molecular Pattern Molecules";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC177522> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Nicotine Metabolite Ratio"@en;
+  skos:altLabel "NMR";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC126115> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Kinase Inhibitor Sensitivity"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC18599> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Biomarker of Dietary Intake"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC153558> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Phosphorylated-FAK Y397"@en;
+  skos:altLabel "Focal Adhesion Kinase 1 Y397 Phosphorylated", "Phosphorylated-Focal Adhesion Kinase 1 Y397",
+    "Phospho-PTK2 (Y397)", "FAK (Phospho Y397)", "Phospho-FAK (Y397)", "FAK (pY397)",
+    "Phospho-PTK2 (Tyr397)", "FAK (Phospho Tyr397)", "Phosphorylated FAK Y397";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC189912> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Phosphorylated Eukaryotic Translation Initiation Factor 4E-Binding Protein 1"@en;
+  skos:altLabel "p4EBP1", "pEIF4EBP1", "Phospho-eIF4E-Binding Protein 1", "P4EBP1",
+    "Phospho-EIF4EBP1";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC129882> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Catecholamine Metabolite"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC129897> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Prostaglandin I2 Metabolite"@en;
+  skos:altLabel "PGIM", "PGI-M", "Prostacyclin (PGI2)-Metabolite", "Prostacyclin Metabolite",
+    "PGI2-Metabolite", "PGI2-M", "PGI2 Metabolite", "Prostaglandin I Metabolite";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC153382> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Phosphorylated EIF4E"@en;
+  skos:altLabel "Phosphorylated Eukaryotic Initiation Factor 4E", "Phospho-EIF4E";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC107563> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Fibrin Monomer"@en;
+  skos:altLabel "fibrinmonomer", "fibrin monomer complexes", "Soluble Fibrin Monomer";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC107153> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Histone H3 Trimethyl Lys4"@en;
+  skos:altLabel "H3K4me3", "H3K4me3 Antigen", "Histone H3 Trimethyl Lysine 4";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC157132> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Phosphorylated-STAT3 Y705"@en;
+  skos:altLabel "STAT3 pY705", "STAT3 (pY705)", "Phospho-STAT3 Y705", "pY-STAT3", "STAT3 Phosphorylated on Tyr705",
+    "STAT3 (Phospho-Tyr705)", "Phosphorylated-Signal Transducer and Activator of Transcription 3 Y705";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC129900> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "VLDL-C Oxidation"@en;
+  skos:altLabel "Oxidized VLDL Cholesterol";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC190767> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Tyrosine Phosphorylated STAT5"@en;
+  skos:altLabel "Tyrosine Phosphorylated-Signal Transducer and Activator of Transcription 5A/5B",
+    "Phosphotyrosine-STAT5", "Tyrosine Phosphorylated-Signal Transducer and Activator of Transcription 5",
+    "pY-STAT5", "Tyrosine Phosphorylated-STAT5";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC190766> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Phosphorylated-STAT1 Y701"@en;
+  skos:altLabel "STAT1 Phosphorylated on Tyr701", "Phospho-STAT1 Y701", "Phosphorylated-Signal Transducer and Activator of Transcription 1 Y701",
+    "STAT1 (pY701)", "STAT1 pY701", "STAT1 (Phospho-Tyr701)", "Tyrosine Phosphorylated STAT1",
+    "pY-STAT1", "Phosphorylated-Signal Transducer and Activator of Transcription 1-Alpha/Beta Y701";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC107151> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Histone H3 Dimethyl Lys28"@en;
+  skos:altLabel "Histone H3 Dimethyl Lysine 28", "H3K28me2", "H3K27me2", "H3K27me2 Antigen",
+    "Histone H3 Dimethyl Lys27";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC156388> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Histone H3 Lysine 79"@en;
+  skos:altLabel "Lysine 79 of Histone H3", "H3K79", "Histone H3 Lys79";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC129883> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Choline Metabolite"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC189911> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Phosphorylated 40S Ribosomal Protein S6"@en;
+  skos:altLabel "Phospho-40S Ribosomal Protein S6", "Phospho-RPS6", "pS6RP", "pRPS6",
+    "Phospho-Small Ribosomal Subunit Protein eS6";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC113515> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Bone Specific Alkaline Phosphatase"@en;
+  skos:altLabel "BSAP", "Bone Alkaline Phosphatase", "Bone-Specific Alkaline Phosphatase",
+    "BAP", "bALP";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC107152> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Histone H3 Dimethyl Lys4"@en;
+  skos:altLabel "Histone H3 Dimethyl Lysine 4", "H3K4me2", "H3K4me2 Antigen";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC174110> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Histone H3 Trimethyl Lys28"@en;
+  skos:altLabel "Histone H3 Trimethyl Lysine 28", "H3K28me3", "H3K27me3";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC105825> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Protein Carbonyl Content"@en;
+  skos:altLabel "Protein Carbonyl Level", "Protein Carbonyl Group";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC121532> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Urine Albumin"@en;
+  skos:altLabel "Urinary Albumin";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC129885> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Tryptophan Metabolite"@en;
+  skos:definition "A molecule produced from tryptophan metabolism, often involved in immune and metabolic pathways.";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC118482> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "MINT31"@en;
+  skos:altLabel "MINT-31";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC141264> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Phosphorylated Proto-Oncogene Tyrosine-Protein Kinase Src"@en;
+  skos:altLabel "Phospho-Proto-Oncogene Tyrosine-Protein Kinase Src", "Phosphorylated SRC",
+    "Phospho-Src";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18520> .
+
+<http://ontology.roche.com/2024aa-NCIC107486> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Tumor Microenvironment of Metastasis Density"@en;
+  skos:definition "A quantitative measure of the components in the tumor microenvironment that support or reflect metastatic potential.";
+  skos:altLabel "TMEM Score", "Tumor Microenvironment of Metastasis Score", "TMEM Density";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18493> .
+
+<http://ontology.roche.com/2024aa-NCIC68764> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Known Valid Biomarker"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC68763> .
+
+<http://ontology.roche.com/2024aa-NCIC68765> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Probable Valid Biomarker"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC68763> .
+
+<http://ontology.roche.com/2024aa-NCIC128469> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Glycan Profile"@en;
+  skos:altLabel "Glycan Analysis", "Glycan Characterization";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC48181> .
+
+<http://ontology.roche.com/2024aa-NCIC126118> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "HLA-Cw Serotype"@en;
+  skos:altLabel "HLA-Cw";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC48181> .
+
+<http://ontology.roche.com/2024aa-NCIC48182> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Gene Signature"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC48181> .
+
+<http://ontology.roche.com/2024aa-NCIC19966> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Molecular Fingerprint of Tumor"@en;
+  skos:altLabel "Signatures of Cancer Cells", "Molecular Profiles of Cancer Cells";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC48181> .
+
+<http://ontology.roche.com/2024aa-NCIC155656> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Diagnostic DNA Methylation Signature"@en;
+  skos:definition "A pattern of DNA methylation changes that can indicate and help diagnose a disease.";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC48181> .
+
+<http://ontology.roche.com/2024aa-NCIC168895> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Measurable Residual Disease Molecular Marker"@en;
+  skos:altLabel "Minimal Residual Disease Signature", "MRD Molecular Marker", "MRD Signature",
+    "MRD Marker", "Minimal Residual Disease Molecular Marker";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC48181> .
+
+<http://ontology.roche.com/2024aa-NCIC116968> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "FOXP3 Treg-Specific Demethylated Region"@en;
+  skos:altLabel "FOXP3 TSDR", "FOXP3 Treg Specific Demethylated Region";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC82987> .
+
+<http://ontology.roche.com/2024aa-NCIC118848> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Tumor Antigen-reactive CD28+/CCR7+/CD27+/CD45RA- Cytotoxic T-lymphocyte"@en;
+  skos:altLabel "Rapidly Expanding High-Avidity Cytotoxic T-Lymphocyte", "Rapidly Expanding High-Avidity Cytotoxic T-Cell",
+    "Rapidly Expanding High-Avidity Cytotoxic T Lymphocyte", "Rapidly Expanding High-Avidity Cytotoxic T Cell";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC82987> .
+
+<http://ontology.roche.com/2024aa-NCIC17220> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Tumor Marker"@en;
+  skos:altLabel "Cancer Biomarker", "Markers, Tumor", "Biomarker, Cancer", "Marker, Tumor",
+    "Biomarkers, Cancer", "Cancer Biomarkers";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18329> .
+
+<http://ontology.roche.com/2024aa-NCIC20205> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Marker of Preneoplastic Change"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC18329> .
+
+<http://ontology.roche.com/2024aa-NCIC129894> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Chemokine Expression Profile"@en;
+  skos:altLabel "Chemokine Profile";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC129886> .
+
+<http://ontology.roche.com/2024aa-NCIC129770> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Total Phosphotyrosine"@en;
+  skos:altLabel "Total pY", "Total p-Tyr";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC129758> .
+
+<http://ontology.roche.com/2024aa-NCIC93245> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Genetic Marker of Susceptibility"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16622> .
+
+<http://ontology.roche.com/2024aa-NCIC17396> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Sequence Tagged Site"@en;
+  skos:altLabel "Tagged Site, Sequence", "Sites, Sequence-Tagged", "STS", "Sites, Sequence Tagged",
+    "Site, Sequence-Tagged", "Tagged Sites, Sequence", "Sequence-Tagged Site", "Sequence-Tagged Sites",
+    "Site, Sequence Tagged";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16622> .
+
+<http://ontology.roche.com/2024aa-NCIC18299> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Polymorphic Microsatellite Marker"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC16622> .
+
+<http://ontology.roche.com/2024aa-NCIC129891> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "DDRD Signature"@en;
+  skos:altLabel "DNA Damage Response Deficiency Gene Signature", "DDRD Gene Signature",
+    "DNA Damage Response Deficiency Signature";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC48182> .
+
+<http://ontology.roche.com/2024aa-NCIC121989> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "BROCA Gene Signature"@en;
+  skos:altLabel "BROCA - Cancer Risk Panel";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC48182> .
+
+<http://ontology.roche.com/2024aa-NCIC148072> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Low Density Array Gene Signature"@en;
+  skos:altLabel "Low-Density Array Gene Signature", "LDA Gene Signature";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC48182> .
+
+<http://ontology.roche.com/2024aa-NCIC190207> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "MHCII Immune Activation Score"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC48182> .
+
+<http://ontology.roche.com/2024aa-NCIC121996> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "BASE47 Gene Signature"@en;
+  skos:altLabel "Bladder Cancer Analysis of Subtypes by Expression 47", "BASE47 Gene Set";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC48182> .
+
+<http://ontology.roche.com/2024aa-NCIC129769> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "TGF-Beta Responsive Gene Signature"@en;
+  skos:altLabel "Transforming Growth Factor Beta Responsive Gene Signature", "TGF-Beta Responsive Signature";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC48182> .
+
+<http://ontology.roche.com/2024aa-NCIC120016> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Lymph Node Gene Expression Signature"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC48182> .
+
+<http://ontology.roche.com/2024aa-NCIC120494> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "PAM50 Gene Expression Signature"@en;
+  skos:altLabel "PAM50", "Prediction Analysis of Microarray 50";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC48182> .
+
+<http://ontology.roche.com/2024aa-NCIC116389> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "EMC-92-Gene Signature"@en;
+  skos:altLabel "EMC-92", "SKY92 Gene Signature", "EMC-92 Gene Signature", "SKY-92 Gene Signature";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC48182> .
+
+<http://ontology.roche.com/2024aa-NCIC120485> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Androgen Receptor-Dependent Gene Signature"@en;
+  skos:altLabel "AR-Dependent Gene Signature", "AR Gene Signature";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC48182> .
+
+<http://ontology.roche.com/2024aa-NCIC181329> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "IFN-1 Gene Signature"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC48182> .
+
+<http://ontology.roche.com/2024aa-NCIC120018> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Tumor Proliferation Gene Expression Signature"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC48182> .
+
+<http://ontology.roche.com/2024aa-NCIC120019> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Germinal Center B-Cell Gene Expression Signature"@en;
+  skos:altLabel "Germinal Center B-Cell-Like Gene Expression Signature", "Germinal Center B Cell-Like Gene Expression Signature",
+    "Germinal Center B Cell Gene Expression Signature";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC48182> .
+
+<http://ontology.roche.com/2024aa-NCIC128278> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Interferon-Related DNA Damage Resistance Gene Signature"@en;
+  skos:altLabel "IFN-Related DNA Damage Resistance Signature";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC48182> .
+
+<http://ontology.roche.com/2024aa-NCIC120017> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "MHC Class II Gene Expression Signature"@en;
+  skos:altLabel "Major Histocompatibility Complex Class II Gene Expression Signature";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC48182> .
+
+<http://ontology.roche.com/2024aa-NCIC121990> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "BROCA-HR Gene Signature"@en;
+  skos:altLabel "BROCA-HR Gene Test";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC48182> .
+
+<http://ontology.roche.com/2024aa-NCIC18396> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Metastasis and Aggressiveness Marker"@en;
+  skos:definition "A biomarker associated with tumor spread (metastasis) and the severity or invasiveness of cancer.";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC17220> .
+
+<http://ontology.roche.com/2024aa-NCIC128284> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Low Molecular Weight Cyclin E"@en;
+  skos:altLabel "Low Molecular Weight Cyclin-E", "LMW-E";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC17220> .
+
+<http://ontology.roche.com/2024aa-NCIC157523> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Tumor Marker Level"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC17220> .
+
+<http://ontology.roche.com/2024aa-NCIC46091> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Melanoma Biomarker"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC17220> .
+
+<http://ontology.roche.com/2024aa-NCIC18395> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Proliferation Marker"@en;
+  skos:broader <http://ontology.roche.com/2024aa-NCIC17220> .
+
+<http://ontology.roche.com/2024aa-NCIC18155> a skos:Concept;
+  skos:inScheme <http://ontology.roche.com/2024aa-biomarkers/vocab>;
+  skos:prefLabel "Expressed Sequence Tag"@en;
+  skos:altLabel "Tag, Expressed Sequence", "Sequence Tag, Expressed", "Sequence Tags, Expressed",
+    "Tags, Expressed Sequence", "EST", "ESTs";
+  skos:broader <http://ontology.roche.com/2024aa-NCIC17396> .
+
+<http://ontology.roche.com/2024aa-biomarkers/vocab> a skos:ConceptScheme;
+  dct:created "2025-07-03"^^xsd:date;
+  dct:creator "Roche";
+  skos:prefLabel "Biomarker vocabulary"@en;
+  skos:hasTopConcept <http://ontology.roche.com/2024aa-NCIC16342> .

@@ -1,0 +1,78 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+
+<https://beo/Disease/EFO%3A0003060> a skos:Concept;
+  <http://open-services.net/ns/core#modifiedBy> "admin";
+  dct:contributor "admin";
+  dct:created "2025-06-06T20:26:37.901Z"^^xsd:dateTime;
+  dct:creator "admin";
+  dct:modified "2025-07-12T17:43:29.193Z"^^xsd:dateTime;
+  skos:inScheme <https://vocabularies.com/hydraid-diseases/0.1>;
+  skos:exactMatch <http://id.nlm.nih.gov/mesh/D002289>;
+  skos:prefLabel "Non-small cell lung cancer";
+  skos:topConceptOf <https://vocabularies.com/hydraid-diseases/0.1> .
+
+<https://beo/Disease/MONDO%3A0056806> a skos:Concept;
+  <http://open-services.net/ns/core#modifiedBy> "admin";
+  dct:contributor "admin";
+  dct:created "2025-06-06T20:26:37.901Z"^^xsd:dateTime;
+  dct:creator "admin";
+  dct:modified "2025-07-12T17:43:55.553Z"^^xsd:dateTime;
+  skos:inScheme <https://vocabularies.com/hydraid-diseases/0.1>;
+  skos:broadMatch <http://id.nlm.nih.gov/mesh/D002289>;
+  skos:prefLabel "Non-small cell squamous lung carcinoma";
+  skos:topConceptOf <https://vocabularies.com/hydraid-diseases/0.1> .
+
+<https://beo/Disease/EFO%3A0001071> a skos:Concept;
+  <http://open-services.net/ns/core#modifiedBy> "admin";
+  dct:contributor "admin";
+  dct:created "2025-06-06T20:26:37.901Z"^^xsd:dateTime;
+  dct:creator "admin";
+  dct:modified "2025-06-06T20:26:37.901Z"^^xsd:dateTime;
+  skos:inScheme <https://vocabularies.com/hydraid-diseases/0.1>;
+  skos:exactMatch <http://id.nlm.nih.gov/mesh/D009369>;
+  skos:prefLabel "Lung carcinoma";
+  skos:topConceptOf <https://vocabularies.com/hydraid-diseases/0.1> .
+
+<https://beo/Disease/1> a skos:Concept;
+  <http://open-services.net/ns/core#modifiedBy> "admin";
+  dct:contributor "admin";
+  dct:created "2025-06-06T20:26:37.901Z"^^xsd:dateTime;
+  dct:creator "admin";
+  dct:modified "2025-07-12T17:44:18.956Z"^^xsd:dateTime;
+  skos:inScheme <https://vocabularies.com/hydraid-diseases/0.1>;
+  skos:closeMatch <http://id.nlm.nih.gov/mesh/D009671>;
+  skos:prefLabel "Solid tumors";
+  skos:topConceptOf <https://vocabularies.com/hydraid-diseases/0.1> .
+
+<https://vocabularies.com/hydraid-diseases/0.1> a skos:ConceptScheme;
+  <http://open-services.net/ns/core#modifiedBy> "admin";
+  dct:contributor "admin";
+  dct:created "2025-06-06T20:26:37.901Z"^^xsd:dateTime;
+  dct:creator "admin";
+  dct:modified "2025-07-12T17:44:18.956Z"^^xsd:dateTime;
+  rdfs:label "Hydraid Diseases"@en;
+  dct:title "Hydraid Diseases"@en;
+  <http://purl.org/ontology/bibo/status> <http://purl.org/spar/pso/draft>;
+  <http://www.linkedmodel.org/1.2/schema/vaem#namespace> <https://vocabularies.com/hydraid-diseases/>;
+  owl:versionInfo "0.1";
+  skos:prefLabel "Hydraid Diseases"@en;
+  skos:hasTopConcept <https://beo/Disease/EFO%3A0003060>, <https://beo/Disease/MONDO%3A0056806>,
+    <https://beo/Disease/EFO%3A0001071>, <https://beo/Disease/1>, <https://beo/Disease/2> .
+
+<https://beo/Disease/2> a skos:Concept;
+  <http://open-services.net/ns/core#modifiedBy> "admin";
+  dct:contributor "admin";
+  dct:created "2025-06-06T20:26:37.901Z"^^xsd:dateTime;
+  dct:creator "admin";
+  dct:modified "2025-07-12T17:42:35.952Z"^^xsd:dateTime;
+  skos:inScheme <https://vocabularies.com/hydraid-diseases/0.1>;
+  skos:exactMatch <http://id.nlm.nih.gov/mesh/D018277>;
+  skos:prefLabel "Lung mucoepidermoid carcinoma";
+  skos:topConceptOf <https://vocabularies.com/hydraid-diseases/0.1> .
