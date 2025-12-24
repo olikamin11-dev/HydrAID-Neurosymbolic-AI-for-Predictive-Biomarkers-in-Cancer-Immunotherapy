@@ -1,3 +1,3 @@
 1) Download HydrAID_9_2024_new model.csv
-2) Open 
+2) Open csv_to_rdf.yml
 3) Use command run_etl.sh
