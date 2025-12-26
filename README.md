@@ -1,7 +1,7 @@
 # HydrAID – Neurosymbolic AI for Predictive Biomarkers in Cancer Immunotherapy
 
 **HydrAID** is a neurosymbolic AI proof of concept developed in collaboration
-with **Roche Information Solutions (RIS)** to support the discovery of
+with **Roche Information Solutions** to support the discovery of
 **predictive biomarkers for cancer immunotherapy**, with a strong focus on
 **explainability, traceability, and clinical trust**.
 
@@ -112,9 +112,9 @@ from different clinical and biomarker-related queries:
 
 ## Example Questions
 HydrAID supports questions such as:
-- *Which multimodal biomarkers are associated with response to immunotherapy in NSCLC?*
-- *What evidence supports biomarker X across clinical trials and real-world studies?*
-- *Which assays and patient subgroups are involved in reported responses?*
+- *What evidence supports the association between these biomarkers and Pembrolizumab in NSCLC?*
+- *Sort the biomarkers of the list by a Quality Score that considers the evidence study design and the number of negative evidence. At the end, explain the quality score you created*
+- *Please propose a multimodal biomarker set ( a group of biomarkers form same and different caegories) to predict a positive response to Pembrolizumab in NSCL*
 
 All answers are **traceable to KG entities and relations**.
 
@@ -134,12 +134,9 @@ All answers are **traceable to KG entities and relations**.
 ## Reproducibility
 This repository provides:
 - Ontology and semantic constraints
-- ETL mappings and illustrative sample data
+- ETL mappings and full dataset
 - Example SPARQL queries
-- Prompt templates and NL→SPARQL examples
-
-Sensitive or proprietary data has been replaced with
-**minimal illustrative samples** suitable for public sharing.
+- Prompt templates and NL to SPARQL examples
 
 ---
 
