@@ -1,0 +1,17 @@
+# Core utilities
+pandas
+pyyaml
+requests
+
+# RDF and SPARQL stack
+rdflib
+SPARQLWrapper
+
+# SHACL validation
+pyshacl
+
+# YARRRML / RML helpers (optional, depending on ETL execution strategy)
+yatter
+
+# Development and notebooks (optional but recommended)
+jupyter
