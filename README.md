@@ -162,3 +162,47 @@ In collaboration with **Roche Information Solutions**
 ## Portfolio
 This project is part of my professional portfolio:  
 🔗 https://github.com/olikamin11-dev/Oliver-Kaminsi-Portfolio
+
+
+## Quickstart (Local Environment)
+
+HydrAID provides a minimal local environment to run the **Semantic Database layer**
+(GraphDB + ETL tooling). Repository creation is performed **manually** in the GraphDB UI.
+
+### 1) Start GraphDB
+
+cd environment
+docker compose up -d graphdb
+
+GraphDB UI will be available at:
+
+http://localhost:7200
+
+### 2) Create a GraphDB repository (manual)
+
+In the GraphDB UI:
+
+1. Go to Setup → Repositories → Create new repository
+2. Choose GraphDB repository
+3. Set an ID (example): hydraid
+4. Save
+
+### 3) Load RDF data (manual)
+
+After creating the repository:
+
+1. Select the repository hydraid
+2. Go to Import → RDF
+3. Upload a Turtle file (example):
+
+kg/sample_rdf/sample_graph.ttl
+
+### 4) Run a demo SPARQL query
+
+In GraphDB UI:
+
+1. Go to SPARQL
+2. Open and run queries from:
+
+kg/sparql/demo_queries.sparql
+
