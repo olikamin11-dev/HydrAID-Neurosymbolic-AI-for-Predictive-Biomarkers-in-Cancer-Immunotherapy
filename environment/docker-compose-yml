@@ -1,0 +1,56 @@
+version: "3.9"
+
+services:
+  graphdb:
+    image: ontotext/graphdb:11.1.0
+    container_name: hydraid-graphdb
+    ports:
+      - "7200:7200"
+    environment:
+      # Adjust heap size depending on your machine
+      - GDB_HEAP_SIZE=2g
+    volumes:
+      - graphdb_data:/opt/graphdb/home
+    restart: unless-stopped
+
+  # RMLMapper service used to execute CSV → RDF ETL mappings.
+  # This container is intended to be run on demand (not continuously).
+  rmlmapper:
+    image: rmlio/rmlmapper-java:latest
+    container_name: hydraid-rmlmapper
+    working_dir: /work
+    volumes:
+      - ../etl:/work/etl
+      - ../kg:/work/kg
+      - ../ontology:/work/ontology
+      - ../quality:/work/quality
+    entrypoint: ["bash", "-lc"]
+    # Example execution (adjust the mapping path as needed):
+    # docker compose run --rm rmlmapper \
+    #   "java -jar /rmlmapper.jar -m etl/rml/mappings.rml.ttl -o kg/sample_rdf/output.ttl"
+
+  # Utility container for running scripts, notebooks, or SPARQL queries.
+  tools:
+    image: python:3.11-slim
+    container_name: hydraid-tools
+    working_dir: /work
+    volumes:
+      - ..:/work
+    command: ["bash", "-lc", "sleep infinity"]
+
+  # --- Optional / advanced ---
+  # Metaphactory and Metis AI typically require a license and private images.
+  # If you have access, you can uncomment and configure the service below.
+  #
+  # metaphactory:
+  #   image: <YOUR_METAPHACTORY_IMAGE>:5.0
+  #   container_name: hydraid-metaphactory
+  #   ports:
+  #     - "8080:8080"
+  #   environment:
+  #     - GRAPHDB_ENDPOINT=http://graphdb:7200
+  #   depends_on:
+  #     - graphdb
+
+volumes:
+  graphdb_data:
